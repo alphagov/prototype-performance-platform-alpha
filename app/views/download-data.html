@@ -1,0 +1,91 @@
+{% extends "layout.html" %}
+
+{% block page_title %}
+  Performance platform
+{% endblock %}
+
+{% block content %}
+
+<main id="content" role="main">
+  <div class="grid-row">
+    <div class="column-two-thirds">
+
+      <h1 class="heading-xlarge">Download data</h1>
+
+      <p class="lede">
+        The Performance Platform is for comparing the performance of UK Government services. It's intended for civil servants, but accessible to everyone.
+    	</p>
+
+      <p>Government services should meet user's needs in a cost-effective and efficient way. To make sure this happens, we collect standardised data to compare how different services are doing.</p>
+
+      <p>The data is available to download for free by anyone.
+
+      <p><a href="https://docs.google.com/spreadsheets/d/1fZM4xJduzXmfCGlH1wEgMiem8uz-sOV86FsOwWxHjiY/edit#gid=0" target="_blank" class="button button-start">Download the data (csv)</a></p>
+
+
+			<h2 class="heading-medium">About the data</h2>
+
+			<p>We collect data about <em>transactions</em>. A transaction forms part of an end-to-end service; It's the process which people go through to create, update, or delete their information or status with Government.</p>
+
+
+			<p>We collect two types of data about transactions: Characteristics (theme, type, etc.) and Facts (cost, volume, etc).</p>
+
+			<p>Use the Characteristics to make sure you're doing fair comparisons of the Facts.</p>
+
+			<h3 class="heading-small">Characteristics</h3>
+			<table>
+				<tr>
+					<th>Term</th>
+					<th>Definition</th>
+					<th>Example values</th>
+				</tr>
+				<tr>
+					<td>Channel</td>
+					<td>We collect transaction data seperately for each delivery channel.</td>
+					<td>Online, paper, or phone.</td>
+				</tr>
+				<tr>
+					<td>User need</td>
+					<td>The need the service which the transaction is part of solves.</td>
+					<td>As a _____, I need to ________, so that _________.</td>
+				<tr>
+					<td>Delivery Organisation</td>
+					<td>Split by department and public body.</td>
+					<td>Full list found <a href="https://www.gov.uk/api/organisations" target="_blank">here.</a></td>
+				</tr>
+				<tr>
+					<td>Theme</td>
+					<td>The high level theme the transaction fits into.</td>
+					<td>Driving, business, etc.</td>
+				</tr>
+				<tr>
+					<td>Type</td>
+					<td>What type of interaction the user has.</td>
+					<td>Register an item, Apply for financial support, etc.</td>
+				</tr>
+			</table>
+
+			<h3 class="heading-small">Facts</h3>
+			<table>
+				<tr>
+					<td>Cost per transaction</td>
+					<td>The amount spent by Government to deliver the transaction. This figure does not include capital expenditure (set-up costs) or money paid as part of the service (e.g benefits or grants).</td>
+				</tr>
+				<tr>
+					<td>Volume</td>
+					<td>The number of individual transactions completed. Bulk transactions are counted seperately. (e.g Paying tax on 3 vehicles in one go is 3 transactions.)</td>
+				</tr>
+			</table>
+
+
+      <h2 class="heading-medium">Other data resources</h2>
+
+			<p>To find more open Government data, visit <a href="https://data.gov.uk/">data.gov.uk</a></p>
+
+    </div>
+  </div>
+</main>
+
+{% endblock %}
+
+
