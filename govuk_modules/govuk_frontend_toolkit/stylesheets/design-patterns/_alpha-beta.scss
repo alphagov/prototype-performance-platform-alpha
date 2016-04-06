@@ -37,15 +37,15 @@
 
 // Phase tag usage:
 
-Alpha
-.phase-tag {
-   @include phase-tag;
-}
+// Alpha
+// .phase-tag {
+//    @include phase-tag;
+// }
 
-Beta
-.phase-tag {
-   @include phase-tag(beta);
-}
+// Beta
+// .phase-tag {
+//    @include phase-tag(beta);
+// }
 
 @mixin phase-tag($state: alpha) {
   @include inline-block;
