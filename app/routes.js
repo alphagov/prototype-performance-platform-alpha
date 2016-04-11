@@ -40,5 +40,11 @@ router.get('/examples/over-18', function (req, res) {
 });
 
 // add your routes here
+router.get('/performance/setup/transaction/new', function (req, res) {
+
+  res.render('performance/setup/transaction/new');
+
+});
+
 
 module.exports = router;

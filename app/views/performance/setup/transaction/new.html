@@ -1,0 +1,199 @@
+{% extends "layout.html" %}
+
+{% block page_title %}
+  Prototype - Performance Platform
+{% endblock %}
+
+{% block content %}
+<main id="content" role="main">
+
+<!-- {% include "includes/breadcrumb_examples.html" %} -->
+
+  <form action="/" method="post" class="form">
+
+    <h1 class="form-title heading-large">
+      Tell us about your transaction
+    </h1>
+
+    <p>
+      Please complete the form below.
+    </p>
+
+    <div class="grid-row">
+      <p class="column-two-thirds">
+        The information provided will be used to give context for,
+        and to aid comparison of, cost and usage data that you will be asked
+        to upload on a regular basis.
+      </p>
+    </div>
+
+    <!-- Full name -->
+    <div class="form-group">
+      <label class="form-label-bold" for="name">Name</label>
+      <p class="form-hint">e.g. Vehicle tax: renewals</p>
+      <input type="text" class="form-control" id="name">
+    </div>
+
+    <!-- Full name -->
+    <div class="form-group">
+      <label class="form-label-bold" for="user-need">User need</label>
+      <p class="form-hint">User need met by this transaction</p>
+      <textarea class="form-control" id="user-need"></textarea>
+    </div>
+
+    <!-- Full name -->
+    <div class="form-group">
+      <label class="form-label-bold" for="department">Department</label>
+      <p class="form-hint">Department responsible for meeting this need</p>
+      <select class="form-control" id="department">
+        <option value="DVLA">Department for Transport</option>
+        <option value="HMRC">HM Revenue and Customs</option>
+      </select>
+    </div>
+
+    <!-- Full name -->
+    <div class="form-group">
+      <label class="form-label-bold" for="agency">Agency</label>
+      <p class="form-hint">Agency responsible for meeting this need (optional)</p>
+      <select class="form-control" id="agency">
+        <option value="NA">Not applicable</option>
+        <option value="NHSBT">NHS Blood and Transport</option>
+      </select>
+    </div>
+
+    <fieldset>
+      <legend class="form-label-bold">Transaction category</legend>
+      <p class="form-hint">Help us to categorise your transaction by choosing a theme and type</p>
+
+      <!-- Full name -->
+      <div class="form-group">
+        <label class="form-label" for="theme">Theme</label>
+        <select class="form-control" id="theme">
+          <option value="driving">Driving</option>
+          <option value="book-access">Book access to something</option>
+        </select>
+      </div>
+
+      <!-- Full name -->
+      <div class="form-group">
+        <label class="form-label" for="type">Type</label>
+        <select class="form-control" id="type">
+          <option value="payment">Payment</option>
+          <option value="application">Application</option>
+        </select>
+      </div>
+    </fieldset>
+
+    <!-- National Insurance number -->
+    <div class="form-group">
+      <fieldset>
+        <legend class="form-label-bold">Channels</legend>
+        <p class="form-hint">Channels through which the transaction can be completed</p>
+
+        <label for="online" class="block-label">
+          <input type="checkbox" name="online" value="online" id="online">
+          Online
+        </label>
+
+        <label for="paper" class="block-label">
+          <input type="checkbox" name="paper" value="paper" id="paper">
+          Paper
+        </label>
+
+        <label for="phone" class="block-label">
+          <input type="checkbox" name="phone" value="phone" id="phone">
+          Phone
+        </label>
+
+        <label for="face_to_face" class="block-label">
+          <input type="checkbox" name="face_to_face" value="face-to-face" id="face_to_face">
+          Face-to-face
+        </label>
+
+        <label for="assisted_digital" class="block-label">
+          <input type="checkbox" name="assisted_digital" value="assisted-digital" id="assisted_digital">
+          Assisted digital
+        </label>
+      </fieldset>
+    </div>
+
+    <div class="form-group">
+      <fieldset>
+
+        <legend class="form-label-bold">
+          Does the transaction include an eligibility check?
+        </legend>
+
+        <label for="radio-checked" class="block-label">
+          <input id="radio-checked" type="radio" name="eligibility" value="Checked">
+          <span class="heading-small">Yes</span><br>
+          A person's eligibility is decided during the transaction
+        </label>
+
+        <label for="radio-assumed" class="block-label">
+          <input id="radio-assumed" type="radio" name="eligibility" value="Not checked">
+          <span class="heading-small">No</span><br>
+          A person's eligibility is not a concern of the transaction
+        </label>
+
+      </fieldset>
+    </div>
+
+    <!-- Full name -->
+    <div class="form-group">
+      <label class="form-label-bold" for="frequency">Frequency</label>
+      <p class="form-hint">Frequency by which someone would access this transaction</p>
+      <select class="form-control" id="frequency">
+        <option value="monthly">Monthly</option>
+        <option value="annually">Annually</option>
+      </select>
+    </div>
+
+    <div class="form-group">
+      <fieldset>
+        <legend class="form-label-bold">GaaP components</legend>
+        <p class="form-hint">GaaP (Government as a Platform) components used by the transaction, if any</p>
+
+        <label for="notify" class="block-label">
+          <input type="checkbox" name="notify" value="notify" id="notify">
+          Notify
+        </label>
+
+        <label for="pay" class="block-label">
+          <input type="checkbox" name="pay" value="pay" id="pay">
+          Pay
+        </label>
+
+        <label for="smart_questions" class="block-label">
+          <input type="checkbox" name="smart_questions" value="smart-questions" id="smart_questions">
+          Smart questions
+        </label>
+
+        <label for="verify" class="block-label">
+          <input type="checkbox" name="verify" value="verify" id="verify">
+          Verify
+        </label>
+      </fieldset>
+    </div>
+
+    <!-- Full name -->
+    <div class="form-group">
+      <fieldset>
+        <legend class="form-label-bold">Data owner</legend>
+        <p class="form-hint">Name and email of person responsible for collecting cost and usage data</p>
+        <label class="form-label" for="data-owner-name">Name</label>
+        <input type="text" class="form-control" id="data-owner-name">
+
+        <label class="form-label" for="data-owner-email">Email</label>
+        <input type="text" class="form-control" id="data-owner-email">
+      </fieldset>
+    </div>
+
+    <div class="form-group">
+      <input type="submit" class="button" value="Save details">
+    </div>
+
+  </form>
+
+</main>
+{% endblock %}
