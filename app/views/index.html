@@ -20,40 +20,6 @@
 
       <p>The data is available to download for free by anyone.
 
-      <p><a href="https://docs.google.com/spreadsheets/d/1fZM4xJduzXmfCGlH1wEgMiem8uz-sOV86FsOwWxHjiY/edit#gid=0" target="_blank" class="button button-start">Download the data (csv)</a></p>
-
-      <details>
-
-        <summary><span class="summary">Options</span></summary>
-
-        <div class="panel panel-border-narrow">
-
-          <form>
-            <fieldset>
-              <label class="block-label" for="waste-type-1">
-                <input id="waste-type-1" name="waste-types" type="checkbox" value="waste-animal">
-                User need
-              </label>
-              <label class="block-label" for="waste-type-2">
-                <input id="waste-type-2" name="waste-types" type="checkbox" value="waste-mines">
-                Delivery organisation
-              </label>
-              <label class="block-label" for="waste-type-3">
-                <input id="waste-type-3" name="waste-types" type="checkbox" value="waste-farm-agricultural">
-                Theme
-              </label>
-              <label class="block-label" for="waste-type-4">
-                <input id="waste-type-4" name="waste-types" type="checkbox" value="waste-farm-agricultural">
-                Type
-              </label>
-            </fieldset>
-          </form>
-
-        </div>
-
-      </details>
-
-
       <h2 class="heading-medium">About the data</h2>
 
       <p>We collect data about <em>transactions</em>. A transaction forms part of an end-to-end service; It's the process which people go through to create, update, or delete their information or status with Government.</p>
@@ -80,7 +46,7 @@
           <td>The need the service which the transaction is part of solves.</td>
           <td>As a _____, I need to ________, so that _________.</td>
         <tr>
-          <td>Delivery Organisation</td>
+          <td>Delivery organisation</td>
           <td>Split by department and public body.</td>
           <td>Full list found <a href="https://www.gov.uk/api/organisations" target="_blank">here.</a></td>
         </tr>
@@ -103,11 +69,63 @@
           <td>The amount spent by Government to deliver the transaction. This figure does not include capital expenditure (set-up costs) or money paid as part of the service (e.g benefits or grants).</td>
         </tr>
         <tr>
-          <td>Volume</td>
-          <td>The number of individual transactions completed. Bulk transactions are counted seperately. (e.g Paying tax on 3 vehicles in one go is 3 transactions.)</td>
+          <td>Usage</td>
+          <td>The number of individual transactions completed. Bulk transactions are counted seperately - for example, paying tax on 3 vehicles at the same time counts as 3 transactions.</td>
         </tr>
       </table>
 
+      <h2 class="heading-medium">Download the data</h2>
+
+      <p>Click <em>Options</em> to filter the data downloaded.</p>
+
+      <p><a href="https://docs.google.com/spreadsheets/d/1fZM4xJduzXmfCGlH1wEgMiem8uz-sOV86FsOwWxHjiY/edit#gid=0" target="_blank" class="button button-start">Download the data (csv)</a></p>
+
+      <details>
+
+        <summary><span class="summary">Options</span></summary>
+
+        <div class="panel panel-border-narrow">
+
+          <form>
+            <fieldset>
+              <legend>Tick the characteristics to be included:</legend>
+
+              <label class="block-label" for="waste-type-1">
+                <input id="waste-type-1" name="waste-types" type="checkbox" value="waste-animal">
+                User need
+              </label>
+              <label class="block-label" for="waste-type-2">
+                <input id="waste-type-2" name="waste-types" type="checkbox" value="waste-mines">
+                Delivery organisation
+              </label>
+              <label class="block-label" for="waste-type-3">
+                <input id="waste-type-3" name="waste-types" type="checkbox" value="waste-farm-agricultural">
+                Theme
+              </label>
+              <label class="block-label" for="waste-type-4">
+                <input id="waste-type-4" name="waste-types" type="checkbox" value="waste-farm-agricultural">
+                Type
+              </label>
+            </fieldset>
+
+            <br>
+            <fieldset>
+              <legend>Tick the facts to be included:</legend>
+
+              <label class="block-label" for="waste-type-5">
+                <input id="waste-type-5" name="waste-types" type="checkbox" value="waste-animal">
+                Cost per transaction
+              </label>
+              <label class="block-label" for="waste-type-6">
+                <input id="waste-type-6" name="waste-types" type="checkbox" value="waste-mines">
+                Usage
+              </label>
+            </fieldset>
+          </form>
+
+        </div>
+
+      </details>
 
       <h2 class="heading-medium">Other data resources</h2>
 
