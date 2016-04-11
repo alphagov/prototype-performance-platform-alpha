@@ -1,5 +1,11 @@
 var express = require('express');
 var router = express.Router();
+// var orgData = require('../app/models/org-data');
+var http = require('https');
+var request = require('request-json');
+var client = request.createClient('https://www.gov.uk/api/');
+// var orgChart = require('../app/models/org-data.js')
+
 
 router.get('/', function (req, res) {
   
@@ -12,9 +18,49 @@ router.get('/', function (req, res) {
 
 // Passing data into a page
 
-router.get('/examples/template-data', function (req, res) {
+function page(body){
 
-  res.render('examples/template-data', { 'name' : 'Foo' });
+  router.get('/org-chart', function (req, res) {
+
+    // console.log('inside router.get', body)
+    var orgData = JSON.stringify(body)
+
+    // console.log(orgData)
+
+    res.render('org-chart',{orgData:  orgData});
+    
+  });
+
+}
+
+client.get('organisations?page=1', function(err, res, body) {
+
+  var allOrgs = []
+
+  //loop through pages
+  for (i = 1; i <= body.pages; i++) {
+    client.get('organisations?page='+i, function(err, res, body){
+      var currentPage = body.results // obj
+
+      // console.log(Array.isArray(currentPage))
+
+      if(Array.isArray(currentPage)){
+        // loop through orgs in current page
+        for(i = 0; i < currentPage.length; i++){
+          allOrgs.push(currentPage[i])        
+        }        
+      }else{
+        allOrgs.push(currentPage)
+      }
+
+
+
+    })
+  }
+
+  console.dir(allOrgs)
+
+  page(allOrgs);
 
 });
 
