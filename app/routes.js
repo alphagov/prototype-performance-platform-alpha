@@ -22,9 +22,12 @@ function page(body){
 
   router.get('/org-chart', function (req, res) {
 
-    console.log('inside router.get', body)
+    // console.log('inside router.get', body)
+    var orgData = JSON.stringify(body)
 
-    res.render('org-chart',{orgData:  body});
+    // console.log(orgData)
+
+    res.render('org-chart',{orgData:  orgData});
     
   });
 
@@ -32,23 +35,32 @@ function page(body){
 
 client.get('organisations?page=1', function(err, res, body) {
 
-  page(body);
+  var allOrgs = []
 
-  // console.log('got some json', body);
+  //loop through pages
+  for (i = 1; i <= body.pages; i++) {
+    client.get('organisations?page='+i, function(err, res, body){
+      var currentPage = body.results // obj
+
+      // console.log(Array.isArray(currentPage))
+
+      if(Array.isArray(currentPage)){
+        // loop through orgs in current page
+        for(i = 0; i < currentPage.length; i++){
+          allOrgs.push(currentPage[i])        
+        }        
+      }else{
+        allOrgs.push(currentPage)
+      }
 
 
 
+    })
+  }
 
-  // http.get('https://www.gov.uk/api/organisations?page=1', (res2) => {
-  //  res2.setEncoding('utf8')
-  //  res2.on("data", function(chunk){
-  //    orgData = chunk 
-  //    console.log(orgData) // logs the full data
-     // res.render('org-chart',{orgData: 'stuff'});
-  //  });
-  // }).on('error', (e) => {
-  //  console.log(`Got error: ${e.message}`);
-  // });
+  console.dir(allOrgs)
+
+  page(allOrgs);
 
 });
 

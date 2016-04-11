@@ -1,20 +1,3 @@
-// var http = require('https');
-
-// http.get('https://www.gov.uk/api/organisations?page=1', (res) => {
-//   res.setEncoding('utf8')
-//   res.on("data", function(chunk){
-//     orgData = chunk 
-//     console.log(orgData) // logs the full data
-// 		module.exports = orgdata; // logging this from another file returns {}
-//   });
-// }).on('error', (e) => {
-//   console.log(`Got error: ${e.message}`);
-// });
-
-// module.exports = {
-// 	orgData : orgData // logging this from another file returns undefined, because async
-// }
-
 var google = require('../assets/javascripts/google-loader.js').google;
 
 

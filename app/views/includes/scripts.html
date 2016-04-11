@@ -5,7 +5,8 @@
 <script src="/public/javascripts/application.js"></script>
 
 <script type="text/javascript">
-	console.log("{{ orgData }}");
+	orgData = {{ orgData | safe}};
+
 </script>
 <script src="https://www.gstatic.com/charts/loader.js"></script>
 <script src="/public/javascripts/org-chart.js"></script>
