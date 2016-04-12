@@ -1,0 +1,56 @@
+{% extends "layout.html" %}
+
+{% block page_title %}
+  Performance platform
+{% endblock %}
+
+{% block content %}
+
+<main id="content" role="main">
+  <div class="grid-row">
+    <div class="column-two-thirds">
+
+      <h1 class="heading-xlarge">Give feedback</h1>
+      <p>This survey is completely anonymous and will only be used to improve the service.</p>
+      <form>
+      	<h2 class="heading-medium">Why did you visit Gov.uk today?</h2>
+      	<div class="form-group">
+      		<legend class="visuallyhidden">Why did you visit Gov.uk today?</legend>
+      		<textarea></textarea>
+      	</div>
+
+      	<h2 class="heading-medium">Did you get what you needed?</h2>
+      	<div class="form-group inline">
+      		<legend class="visuallyhidden">Did you get what you needed?</legend>
+      		<label class="block-label" for="radio-inline-1">
+		        <input id="radio-inline-1" type="radio" name="radio-inline-group" value="Yes">
+		        Yes
+		      </label>
+
+		      <label class="block-label" for="radio-inline-2">
+		        <input id="radio-inline-2" type="radio" name="radio-inline-group" value="No">
+		        No
+		      </label>
+      		
+      	</div>
+
+      	<h2 class="heading-medium">How could we improve this service?</h2>
+
+      	<div class="form-group">
+      		<legend class="visuallyhidden">How could we improve this service?</legend>
+      		<textarea></textarea>      		
+      	</div>
+
+      	<div class="form-group">
+				  <input class="button" type="submit" value="Send feedback">    		
+      	</div>
+
+      </form>
+   
+    </div>
+  </div>
+</main>
+
+{% endblock %}
+
+
