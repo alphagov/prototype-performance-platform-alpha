@@ -8,8 +8,8 @@ var client = request.createClient('https://www.gov.uk/api/');
 
 
 router.get('/', function (req, res) {
-  
-  res.render('index');
+
+  res.render('performance/index');
 
 });
 
@@ -86,5 +86,11 @@ router.get('/examples/over-18', function (req, res) {
 });
 
 // add your routes here
+router.get('/performance/setup/transaction/new', function (req, res) {
+
+  res.render('performance/setup/transaction/new');
+
+});
+
 
 module.exports = router;
