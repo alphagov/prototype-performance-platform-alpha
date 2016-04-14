@@ -95,22 +95,36 @@
                 All transactions
               </label>
 
-              <label for="radio-selected-transactions" class="block-label" data-target="transaction-search">
+              <label for="radio-selected-transactions" class="block-label" data-target="select-transaction-panel">
                 <input id="radio-selected-transactions" type="radio" name="radio-transactions" value="selected">
                 Selected transactions
               </label>
 
-              <div class="panel panel-border-narrow js-hidden" id="transaction-search">
-                <label class="form-label" for="start_page_url">
-                  Search transactions
+              <div class="panel panel-border-narrow js-hidden" id="select-transaction-panel">
+                <label class="form-label" for="transaction-select">
+                  Select one or more transactions
                 </label>
-                <input class="form-control" type="text" placeholder="Start typing" id="start_page_url">
+                <select class="form-control" id="transaction-select" multiple="multiple" style="width: 100%">
+                  <option value="1">Access to birth records for adopted adults</option>
+                  <option value="2">Adding details to the adoption contact register</option>
+                  <option value="3">Apply for a license</option>
+                </select>
               </div>
 
-              <label for="radio-organisation-transactions" class="block-label" data-target="organisation-search">
+              <label for="radio-organisation-transactions" class="block-label" data-target="select-organisation-panel">
                 <input id="radio-organisation-transactions" type="radio" name="radio-transactions" value="all">
                 Transactions for selected departments and agencies
               </label>
+
+              <div class="panel panel-border-narrow js-hidden" id="select-organisation-panel">
+                <label class="form-label" for="organisation-select">
+                  Select one or more departments or agencies
+                </label>
+                <select class="form-control" id="organisation-select" multiple="multiple"  style="width: 100%">
+                  <option value="HMPO">HM Passport Office</option>
+                  <option value="GLA">Gangmasters Licensing Authority</option>
+                </select>
+              </div>
 
               <div class="panel panel-border-narrow js-hidden" id="organisation-search">
                 <label class="form-label" for="start_page_url">
@@ -276,6 +290,16 @@
 
     </div>
   </div>
+  <script type="text/javascript">
+    $('select#transaction-select').select2({
+      allowClear: true,
+      placeholder: ''
+    });
+    $('select#organisation-select').select2({
+      allowClear: true,
+      placeholder: ''
+    });
+  </script>
 </main>
 
 {% endblock %}
