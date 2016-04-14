@@ -95,6 +95,21 @@
                 All transactions
               </label>
 
+              <label for="radio-organisation-transactions" class="block-label" data-target="select-organisation-panel">
+                <input id="radio-organisation-transactions" type="radio" name="radio-transactions" value="all">
+                Transactions for selected departments and agencies
+              </label>
+
+              <div class="panel panel-border-narrow js-hidden" id="select-organisation-panel">
+                <label class="form-label" for="organisation-select">
+                  Select one or more departments or agencies
+                </label>
+                <select class="form-control" id="organisation-select" multiple="multiple"  style="width: 100%">
+                  <option value="HMPO">HM Passport Office</option>
+                  <option value="GLA">Gangmasters Licensing Authority</option>
+                </select>
+              </div>
+
               <label for="radio-selected-transactions" class="block-label" data-target="select-transaction-panel">
                 <input id="radio-selected-transactions" type="radio" name="radio-transactions" value="selected">
                 Selected transactions
@@ -111,27 +126,6 @@
                 </select>
               </div>
 
-              <label for="radio-organisation-transactions" class="block-label" data-target="select-organisation-panel">
-                <input id="radio-organisation-transactions" type="radio" name="radio-transactions" value="all">
-                Transactions for selected departments and agencies
-              </label>
-
-              <div class="panel panel-border-narrow js-hidden" id="select-organisation-panel">
-                <label class="form-label" for="organisation-select">
-                  Select one or more departments or agencies
-                </label>
-                <select class="form-control" id="organisation-select" multiple="multiple"  style="width: 100%">
-                  <option value="HMPO">HM Passport Office</option>
-                  <option value="GLA">Gangmasters Licensing Authority</option>
-                </select>
-              </div>
-
-              <div class="panel panel-border-narrow js-hidden" id="organisation-search">
-                <label class="form-label" for="start_page_url">
-                  Search departments and agencies
-                </label>
-                <input class="form-control" type="text" placeholder="Start typing" id="start_page_url">
-              </div>
             </fieldset>
 
             <br>
@@ -293,11 +287,11 @@
   <script type="text/javascript">
     $('select#transaction-select').select2({
       allowClear: true,
-      placeholder: ''
+      placeholder: 'Start typing'
     });
     $('select#organisation-select').select2({
       allowClear: true,
-      placeholder: ''
+      placeholder: 'Start typing'
     });
   </script>
 </main>
