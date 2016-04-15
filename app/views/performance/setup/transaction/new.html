@@ -27,21 +27,21 @@
       </p>
     </div>
 
-    <!-- Full name -->
+    <!-- Transaction name -->
     <div class="form-group">
       <label class="form-label-bold" for="name">Name</label>
       <p class="form-hint">e.g. Vehicle tax: renewals</p>
       <input type="text" class="form-control" id="name">
     </div>
 
-    <!-- Full name -->
+    <!-- User need -->
     <div class="form-group">
       <label class="form-label-bold" for="user-need">User need</label>
       <p class="form-hint">User need met by this transaction</p>
       <textarea class="form-control" id="user-need"></textarea>
     </div>
 
-    <!-- Full name -->
+    <!-- Department -->
     <div class="form-group">
       <label class="form-label-bold" for="department">Department</label>
       <p class="form-hint">Department responsible for meeting this need</p>
@@ -51,7 +51,7 @@
       </select>
     </div>
 
-    <!-- Full name -->
+    <!-- Agency -->
     <div class="form-group">
       <label class="form-label-bold" for="agency">Agency</label>
       <p class="form-hint">Agency responsible for meeting this need (optional)</p>
@@ -61,30 +61,34 @@
       </select>
     </div>
 
+    <!-- Dependent transactions -->
     <fieldset>
       <legend class="form-label-bold">Transactions dependent on</legend>
       <p class="form-hint">Transactions which must be completed before starting this one, if any</p>
 
+      <!-- Dependent transaction name -->
       <div class="form-group">
-        <label class="form-label" for="name">Transaction name</label>
+        <label class="form-label" for="dependent-transaction-name">Transaction name</label>
         <p class="form-hint">e.g. Vehicle tax: applications</p>
-        <input type="text" class="form-control" id="name">
+        <input type="text" class="form-control" id="dependent-transation-name">
       </div>
 
+      <!-- Dependent transaction department -->
       <div class="form-group">
-        <label class="form-label" for="department">Department</label>
+        <label class="form-label" for="dependent-transaction-department">Department</label>
         <p class="form-hint">Department responsible for this transaction</p>
-        <select class="form-control" id="department">
+        <select class="form-control" id="dependent-transaction-department">
           <option value=""></option>
           <option value="DVLA">Department for Transport</option>
           <option value="HMRC">HM Revenue and Customs</option>
         </select>
       </div>
 
+      <!-- Dependent transaction agency -->
       <div class="form-group">
-        <label class="form-label" for="agency">Agency</label>
+        <label class="form-label" for="dependent-transaction-agency">Agency</label>
         <p class="form-hint">Agency responsible for this transaction (optional)</p>
-        <select class="form-control" id="agency">
+        <select class="form-control" id="dependent-transaction-agency">
           <option value=""></option>
           <option value="NA">Not applicable</option>
           <option value="NHSBT">NHS Blood and Transport</option>
@@ -96,11 +100,12 @@
       </div>
     </fieldset>
 
+    <!-- Transaction category -->
     <fieldset>
       <legend class="form-label-bold">Transaction category</legend>
       <p class="form-hint">Help us to categorise your transaction by choosing a theme and type</p>
 
-      <!-- Full name -->
+      <!-- Theme -->
       <div class="form-group">
         <label class="form-label" for="theme">Theme</label>
         <select class="form-control" id="theme">
@@ -109,7 +114,7 @@
         </select>
       </div>
 
-      <!-- Full name -->
+      <!-- Type -->
       <div class="form-group">
         <label class="form-label" for="type">Type</label>
         <select class="form-control" id="type">
@@ -119,54 +124,54 @@
       </div>
     </fieldset>
 
-    <!-- National Insurance number -->
+    <!-- Channel -->
     <div class="form-group">
       <fieldset>
         <legend class="form-label-bold">Channels</legend>
         <p class="form-hint">Channels through which the transaction can be completed</p>
 
         <label for="online" class="block-label">
-          <input type="checkbox" name="online" value="online" id="online">
+          <input type="checkbox" name="channel" value="online" id="online">
           Online
         </label>
 
         <label for="paper" class="block-label">
-          <input type="checkbox" name="paper" value="paper" id="paper">
+          <input type="checkbox" name="channel" value="paper" id="paper">
           Paper
         </label>
 
         <label for="phone" class="block-label">
-          <input type="checkbox" name="phone" value="phone" id="phone">
+          <input type="checkbox" name="channel" value="phone" id="phone">
           Phone
         </label>
 
-        <label for="face_to_face" class="block-label">
-          <input type="checkbox" name="face_to_face" value="face-to-face" id="face_to_face">
+        <label for="face-to-face" class="block-label">
+          <input type="checkbox" name="channel" value="face-to-face" id="face-to-face">
           Face-to-face
         </label>
 
-        <label for="assisted_digital" class="block-label">
-          <input type="checkbox" name="assisted_digital" value="assisted-digital" id="assisted_digital">
+        <label for="assisted-digital" class="block-label">
+          <input type="checkbox" name="channel" value="assisted-digital" id="assisted-digital">
           Assisted digital
         </label>
       </fieldset>
     </div>
 
+    <!-- Eligibility check -->
     <div class="form-group">
       <fieldset>
-
         <legend class="form-label-bold">
           Does the transaction include an eligibility check?
         </legend>
 
-        <label for="radio-checked" class="block-label">
-          <input id="radio-checked" type="radio" name="eligibility" value="Checked">
+        <label for="eligibility-check-included" class="block-label">
+          <input type="radio" name="eligibility-check" value="included" id="eligibility-check-included">
           <span class="heading-small">Yes</span><br>
           A person's eligibility is decided during the transaction
         </label>
 
-        <label for="radio-assumed" class="block-label">
-          <input id="radio-assumed" type="radio" name="eligibility" value="Not checked">
+        <label for="eligibility-check-not-included" class="block-label">
+          <input type="radio" name="eligibility-check" value="eligibility-check-not-included" id="eligibility-check-not-included">
           <span class="heading-small">No</span><br>
           A person's eligibility is not a concern of the transaction
         </label>
@@ -174,85 +179,87 @@
       </fieldset>
     </div>
 
-    <!-- Full name -->
+    <!-- Frequency -->
     <div class="form-group">
       <label class="form-label-bold" for="frequency">Frequency</label>
       <p class="form-hint">Frequency by which someone would access this transaction</p>
-      <select class="form-control" id="frequency">
+      <select name="frequency" class="form-control" id="frequency">
         <option value="monthly">Monthly</option>
         <option value="annually">Annually</option>
       </select>
     </div>
 
+    <!--  Interaction components -->
     <div class="form-group">
       <fieldset>
         <legend class="form-label-bold">Interaction components</legend>
         <p class="form-hint">Interaction components that make up the transaction</p>
 
         <label for="eligibility" class="block-label">
-          <input type="checkbox" name="eligibility" value="eligibility" id="eligibility">
+          <input type="checkbox" name="interaction-component" value="eligibility" id="eligibility">
           Eligibility
         </label>
 
         <label for="notification" class="block-label">
-          <input type="checkbox" name="notification" value="notification" id="notification">
+          <input type="checkbox" name="interaction-component" value="notification" id="notification">
           Notification
         </label>
 
         <label for="payment" class="block-label">
-          <input type="checkbox" name="payment" value="payment" id="payment">
+          <input type="checkbox" name="interaction-component" value="payment" id="payment">
           Payment
         </label>
 
         <label for="verification" class="block-label">
-          <input type="checkbox" name="verification" value="verification" id="verification">
+          <input type="checkbox" name="interaction-component" value="verification" id="verification">
           Verification
         </label>
       </fieldset>
     </div>
 
+    <!--  GaaP components -->
     <div class="form-group">
       <fieldset>
         <legend class="form-label-bold">GaaP components</legend>
         <p class="form-hint">GaaP (Government as a Platform) components used by the transaction, if any</p>
 
         <label for="notify" class="block-label">
-          <input type="checkbox" name="notify" value="notify" id="notify">
+          <input type="checkbox" name="gaap-component" value="notify" id="notify">
           Notify
         </label>
 
         <label for="pay" class="block-label">
-          <input type="checkbox" name="pay" value="pay" id="pay">
+          <input type="checkbox" name="gaap-component" value="pay" id="pay">
           Pay
         </label>
 
-        <label for="smart_questions" class="block-label">
-          <input type="checkbox" name="smart_questions" value="smart-questions" id="smart_questions">
+        <label for="smart-questions" class="block-label">
+          <input type="checkbox" name="gaap-component" value="smart-questions" id="smart-questions">
           Smart questions
         </label>
 
         <label for="verify" class="block-label">
-          <input type="checkbox" name="verify" value="verify" id="verify">
+          <input type="checkbox" name="gaap-component" value="verify" id="verify">
           Verify
         </label>
       </fieldset>
     </div>
 
-    <!-- Full name -->
+    <!-- Data curator -->
     <div class="form-group">
       <fieldset>
         <legend class="form-label-bold">Data curator</legend>
         <p class="form-hint">Name and email of person responsible for collecting cost and usage data</p>
         <label class="form-label" for="data-curator-name">Name</label>
-        <input type="text" class="form-control" id="data-curator-name">
+        <input type="text" name="data-curator-name" class="form-control" id="data-curator-name">
 
         <label class="form-label" for="data-curator-email">Email</label>
-        <input type="text" class="form-control" id="data-curator-email">
+        <input type="text" name="data-curator-email" class="form-control" id="data-curator-email">
       </fieldset>
     </div>
 
     <div class="form-group">
-      <input type="submit" class="button" value="Save details">
+      <input type="submit" class="button" value="Add transaction">
     </div>
 
   </form>
