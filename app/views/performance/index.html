@@ -76,19 +76,169 @@
 
       <h2 class="heading-medium">Download the data</h2>
 
-      <p>Click <em>Options</em> to filter the data downloaded.</p>
+      <p>Download data as a CSV file.</p>
 
-      <p><a href="https://docs.google.com/spreadsheets/d/18zlIlwnFscJthjmn1i25-y9xwXvOBf25erEZ7KBheb8/edit#gid=0" target="_blank" class="button button-start">Download the data (csv)</a></p>
+      <p><a href="https://docs.google.com/spreadsheets/d/18zlIlwnFscJthjmn1i25-y9xwXvOBf25erEZ7KBheb8/edit#gid=0" target="_blank" class="button button-start">Download all data</a></p>
 
       <details>
 
-        <summary><span class="summary">Options</span></summary>
+        <summary><span class="summary">Download filtered data</span></summary>
 
         <div class="panel panel-border-narrow">
 
           <form>
             <fieldset>
-              <legend>Tick the characteristics to be included:</legend>
+              <legend>Choose transactions to include:</legend>
+
+              <label for="radio-all-transactions" class="block-label">
+                <input id="radio-all-transactions" type="radio" name="radio-transactions" value="all">
+                All transactions
+              </label>
+
+              <label for="radio-organisation-transactions" class="block-label" data-target="select-organisation-panel">
+                <input id="radio-organisation-transactions" type="radio" name="radio-transactions" value="all">
+                Transactions for selected departments and agencies
+              </label>
+
+              <div class="panel panel-border-narrow js-hidden" id="select-organisation-panel">
+                <label class="form-label" for="organisation-select">
+                  Select one or more departments or agencies
+                </label>
+                <select class="form-control" id="organisation-select" multiple="multiple"  style="width: 100%">
+                  <option value="HMPO">HM Passport Office</option>
+                  <option value="GLA">Gangmasters Licensing Authority</option>
+                </select>
+              </div>
+
+              <label for="radio-selected-transactions" class="block-label" data-target="select-transaction-panel">
+                <input id="radio-selected-transactions" type="radio" name="radio-transactions" value="selected">
+                Selected transactions
+              </label>
+
+              <div class="panel panel-border-narrow js-hidden" id="select-transaction-panel">
+                <label class="form-label" for="transaction-select">
+                  Select one or more transactions
+                </label>
+                <select class="form-control" id="transaction-select" multiple="multiple" style="width: 100%">
+                  <option value="1">Access to birth records for adopted adults</option>
+                  <option value="2">Adding details to the adoption contact register</option>
+                  <option value="3">Apply for a license</option>
+                </select>
+              </div>
+
+            </fieldset>
+
+            <br>
+            <fieldset>
+              <legend>Choose periods to report on:</legend>
+
+              <label for="radio-reporting-quarterly" class="block-label" data-target="select-quarters">
+                <input id="radio-reporting-quarterly" type="radio" name="reporting-period" value="quarterly">
+                Quarterly
+              </label>
+
+              <div class="panel panel-border-narrow js-hidden" id="select-quarters">
+                <label class="block-label" for="quarter-1">
+                  <input id="quarter-1" name="quarters" type="checkbox" value="jan-mar-2016">
+                  Jan - Mar 2016
+                </label>
+
+                <label class="block-label" for="quarter-2">
+                  <input id="quarter-2" name="quarters" type="checkbox" value="oct-dec-2015">
+                  Oct - Dec 2015
+                </label>
+
+                <label class="block-label" for="quarter-3">
+                  <input id="quarter-3" name="quarters" type="checkbox" value="jul-sep-2015">
+                  Jul - Sep 2015
+                </label>
+
+                <label class="block-label" for="quarter-4">
+                  <input id="quarter-4" name="quarters" type="checkbox" value="may-jun-2015">
+                  May - Jun 2015
+                </label>
+              </div>
+
+              <label for="radio-reporting-yearly" class="block-label" data-target="choose-year-start-finish">
+                <input id="radio-reporting-yearly" type="radio" name="reporting-period" value="yearly">
+                Yearly
+              </label>
+
+              <div class="panel panel-border-narrow js-hidden" id="choose-year-start-finish">
+                <p class="form-hint">Choose a start month of a 12-month period</p>
+                <label for="radio-year-jan-dec" class="block-label" data-target="select-years-jan-dec">
+                  <input id="radio-year-jan-dec" type="radio" name="year-range" value="jan-dec">
+                  January
+                </label>
+
+                <div class="panel panel-border-narrow js-hidden" id="select-years-jan-dec">
+                  <label class="block-label" for="jan-2015-dec-2015">
+                    <input id="jan-2015-dec-2015" name="jan-2015-dec-2015" type="checkbox" value="jan-2015-dec-2015">
+                    Jan 2015 - Dec 2015
+                  </label>
+
+                  <label class="block-label" for="jan-2014-dec-2014">
+                    <input id="jan-2014-dec-2014" name="jan-2014-dec-2014" type="checkbox" value="jan-2014-dec-2014">
+                    Jan 2014 - Dec 2014
+                  </label>
+                </div>
+
+                <label for="radio-year-apr-mar" class="block-label" data-target="select-years-apr-mar">
+                  <input id="radio-year-apr-mar" type="radio" name="year-range" value="apr-mar">
+                  April
+                </label>
+
+                <div class="panel panel-border-narrow js-hidden" id="select-years-apr-mar">
+                  <label class="block-label" for="apr-2015-mar-2016">
+                    <input id="apr-2015-mar-2016" name="apr-2015-mar-2016" type="checkbox" value="apr-2015-mar-2016">
+                    Apr 2015 - Mar 2016
+                  </label>
+
+                  <label class="block-label" for="apr-2014-mar-2015">
+                    <input id="apr-2014-mar-2015" name="apr-2014-mar-2015" type="checkbox" value="apr-2014-mar-2015">
+                    Apr 2014 - Mar 2015
+                  </label>
+                </div>
+
+                <label for="radio-year-jul-jun" class="block-label" data-target="select-years-jul-jun">
+                  <input id="radio-year-jul-jun" type="radio" name="year-range" value="jul-jun">
+                  July
+                </label>
+
+                <div class="panel panel-border-narrow js-hidden" id="select-years-jul-jun">
+                  <label class="block-label" for="jul-2014-jun-2015">
+                    <input id="jul-2014-jun-2015" name="jul-2014-jun-2015" type="checkbox" value="jul-2014-jun-2015">
+                    Jul 2014 - Jun 2015
+                  </label>
+
+                  <label class="block-label" for="jul-2013-jun-2014">
+                    <input id="jul-2013-jun-2014" name="jul-2013-jun-2014" type="checkbox" value="jul-2013-jun-2014">
+                    Jul 2013 - Jun 2014
+                  </label>
+                </div>
+
+                <label for="radio-year-oct-sep" class="block-label" data-target="select-years-oct-sep">
+                  <input id="radio-year-oct-sep" type="radio" name="year-range" value="oct-sep">
+                  October
+                </label>
+
+                <div class="panel panel-border-narrow js-hidden" id="select-years-oct-sep">
+                  <label class="block-label" for="oct-2014-sep-2015">
+                    <input id="oct-2014-sep-2015" name="oct-2014-sep-2015" type="checkbox" value="oct-2014-sep-2015">
+                    Oct 2014 - Sep 2015
+                  </label>
+
+                  <label class="block-label" for="oct-2013-sep-2014">
+                    <input id="oct-2013-sep-2014" name="oct-2013-sept-2014" type="checkbox" value="oct-2013-sep-2014">
+                    Oct 2013 - Sep 2014
+                  </label>
+                </div>
+              </div>
+            </fieldset>
+
+            <br>
+            <fieldset>
+              <legend>Select characteristics to include:</legend>
 
               <label class="block-label" for="waste-type-1">
                 <input id="waste-type-1" name="waste-types" type="checkbox" value="waste-animal">
@@ -110,7 +260,7 @@
 
             <br>
             <fieldset>
-              <legend>Tick the facts to be included:</legend>
+              <legend>Select facts to include:</legend>
 
               <label class="block-label" for="waste-type-5">
                 <input id="waste-type-5" name="waste-types" type="checkbox" value="waste-animal">
@@ -121,9 +271,13 @@
                 Usage
               </label>
             </fieldset>
+
           </form>
 
         </div>
+
+        <p><a href="https://docs.google.com/spreadsheets/d/1fZM4xJduzXmfCGlH1wEgMiem8uz-sOV86FsOwWxHjiY/edit#gid=0" target="_blank" class="button button-start">Download filtered data</a></p>
+
 
       </details>
 
@@ -133,6 +287,16 @@
 
     </div>
   </div>
+  <script type="text/javascript">
+    $('select#transaction-select').select2({
+      allowClear: true,
+      placeholder: 'Search...'
+    });
+    $('select#organisation-select').select2({
+      allowClear: true,
+      placeholder: 'Search...'
+    });
+  </script>
 </main>
 
 {% endblock %}
