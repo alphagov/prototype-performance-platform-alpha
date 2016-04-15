@@ -17,28 +17,34 @@ function drawChart() {
     if(orgData[i]){
 
       // set thisOrg
-      var thisOrg = {v: orgData[i].id, f: orgData[i].title + '<br /><br /><em>'+orgData[i].format+'</em>'};
+      // var thisOrg = {v: orgData[i].id, f: orgData[i].title + '<br /><br /><em>'+orgData[i].format+'</em>'};
 
-      //set the parentOrg
-      var parentOrg = orgData[i].parent_organisations[0]
-      var parent = null
-      parentOrg ? parent = parentOrg.id : null
+      // //set the parentOrg
+      // var parentOrg = orgData[i].parent_organisations[0]
+      // var parent = null
+      // parentOrg ? parent = parentOrg.id : null
 
       //set the tip
-      var tip = orgData[i].format
+      // var tip = orgData[i].format
 
+      var thisOrg = String(orgData[i].name);
+      var parentOrg = String(orgData[i].boss);
+      // var tip = orgData[i].type;
+
+      console.log(orgData[i])
       //set the array
       var orgArray = [
         thisOrg,
-        parent,
-        tip 
+        parentOrg,
+        'no tip yet'
       ]
+      console.log(orgArray);
       rowsArray.push(orgArray)
     }
 
   }
 
-  // console.dir(JSON.stringify(rowsArray))
+  console.dir(JSON.stringify(rowsArray))
 
 
   data.addRows(rowsArray);
