@@ -46,8 +46,10 @@
       <label class="form-label-bold" for="department">Department</label>
       <p class="form-hint">Department responsible for meeting this need</p>
       <select class="form-control" id="department">
+        <option value=""></option>
         <option value="DVLA">Department for Transport</option>
         <option value="HMRC">HM Revenue and Customs</option>
+        <option value="Home Office">Home Office</option>
       </select>
     </div>
 
@@ -56,8 +58,9 @@
       <label class="form-label-bold" for="agency">Agency</label>
       <p class="form-hint">Agency responsible for meeting this need (optional)</p>
       <select class="form-control" id="agency">
-        <option value="NA">Not applicable</option>
-        <option value="NHSBT">NHS Blood and Transport</option>
+        <option value=""></option>
+        <option value="GLA">Gangmasters Licensing Authority</option>
+        <option value="HMPO">HM Passport Office</option>
       </select>
     </div>
 
@@ -68,9 +71,14 @@
 
       <!-- Dependent transaction name -->
       <div class="form-group">
-        <label class="form-label" for="dependent-transaction-name">Transaction name</label>
-        <p class="form-hint">e.g. Vehicle tax: applications</p>
-        <input type="text" class="form-control" id="dependent-transation-name">
+        <label class="form-label" for="dependent-transaction-name-select">Transaction name</label>
+        <select class="form-control" id="dependent-transaction-name-select">
+          <option value=""></option>
+          <option value="1">Access to birth records for adopted adults</option>
+          <option value="2">Adding details to the adoption contact register</option>
+          <option value="3">Apply for a license</option>
+          <option value="4">Licensing system for gangmasters</option>
+        </select>
       </div>
 
       <!-- Dependent transaction department -->
@@ -81,6 +89,7 @@
           <option value=""></option>
           <option value="DVLA">Department for Transport</option>
           <option value="HMRC">HM Revenue and Customs</option>
+          <option value="Home Office">Home Office</option>
         </select>
       </div>
 
@@ -90,8 +99,8 @@
         <p class="form-hint">Agency responsible for this transaction (optional)</p>
         <select class="form-control" id="dependent-transaction-agency">
           <option value=""></option>
-          <option value="NA">Not applicable</option>
-          <option value="NHSBT">NHS Blood and Transport</option>
+          <option value="GLA">Gangmasters Licensing Authority</option>
+          <option value="HMPO">HM Passport Office</option>
         </select>
       </div>
 
@@ -263,6 +272,13 @@
     </div>
 
   </form>
+
+  <script type="text/javascript">
+    $('select#department, select#agency, select#dependent-transaction-name-select, select#dependent-transaction-department, select#dependent-transaction-agency').select2({
+      allowClear: true,
+      placeholder: 'Search...'
+    });
+  </script>
 
 </main>
 {% endblock %}
