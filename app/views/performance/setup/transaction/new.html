@@ -166,9 +166,24 @@
         <p class="form-hint">Department responsible for this transaction</p>
         <select class="form-control" id="dependent-transaction-department">
           <option value=""></option>
-          <option value="DVLA">Department for Transport</option>
-          <option value="HMRC">HM Revenue and Customs</option>
+          <option value="AGO">Attorney General's Office</option>
+          <option value="CO">Cabinet Office</option>
+          <option value="BIS">Department for Business, Innovation and Skills</option>
+          <option value="DCLG">Department for Communities and Local Government</option>
+          <option value="DCMS">Department for Culture, Media, and Sport</option>
+          <option value="DfE">Department for Education</option>
+          <option value="Defra">Department for Environment, Food and Rural Affairs</option>
+          <option value="DFID">Department for International Development</option>
+          <option value="DFT">Department for Transport</option>
+          <option value="DWP">Department for Work and Pensions</option>
+          <option value="DECC">Department of Energy & Climate Change</option>
+          <option value="DH">Department of Health</option>
+          <option value="FCO">Foreign and Commonwealth Office</option>
           <option value="Home Office">Home Office</option>
+          <option value="HMRC">HM Revenue and Customs</option>
+          <option value="HMT">HM Treasury</option>
+          <option value="MOD">Ministry of Defence</option>
+          <option value="MOJ">Ministry of Justice</option>
         </select>
       </div>
 
@@ -178,8 +193,23 @@
         <p class="form-hint">Agency responsible for this transaction (optional)</p>
         <select class="form-control" id="dependent-transaction-agency">
           <option value=""></option>
+          <option value="ACE">Arts Council</option>
+          <option value="BFI">British Film Institute</option>
+          <option value="CPS">Crown Prosecution Service</option>
+          <option value="EH">English Heritage</option>
+          <option value="GC">Gambling Commission</option>
           <option value="GLA">Gangmasters Licensing Authority</option>
+          <option value="GDS">Government Digital Service</option>
+          <option value="GEO">Government Equalities Office</option>
+          <option value="HLF">Heritage Lottery Fund</option>
           <option value="HMPO">HM Passport Office</option>
+          <option value="NCTL">National College for Teaching and Leadership</option>
+          <option value="Ofcom">Ofcom</option>
+          <option value="Ofsted">Office for Standards in Education</option>
+          <option value="Ofqual">Office of Qualifications and Examinations Regulation</option>
+          <option value="sport-england">Sport England</option>
+          <option value="TSol">Treasury Solicitor's Department</option>
+          <option value="visit-england">Visit England</option>
         </select>
       </div>
 
@@ -319,7 +349,7 @@
   </form>
 
   <script type="text/javascript">
-    $('select#department, select#agency, select#dependent-transaction-name-select, select#dependent-transaction-department, select#dependent-transaction-agency').select2({
+    $('select#department, select#agency-body, select#dependent-transaction-name-select, select#dependent-transaction-department, select#dependent-transaction-agency').select2({
       allowClear: true,
       placeholder: 'Search...'
     });
