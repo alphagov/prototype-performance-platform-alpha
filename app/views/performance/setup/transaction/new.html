@@ -41,6 +41,26 @@
       <textarea class="form-control" id="user-need"></textarea>
     </div>
 
+    <!-- URL -->
+    <div class="form-group">
+      <label class="form-label-bold" for="url">URL</label>
+      <p class="form-hint">URL of the transaction's start page or home page</p>
+      <input type="text" class="form-control" id="url">
+    </div>
+
+    <!-- Data curator -->
+    <div class="form-group">
+      <fieldset>
+        <legend class="form-label-bold">Data curator</legend>
+        <p class="form-hint">Name and email of person responsible for collecting cost and usage data</p>
+        <label class="form-label" for="data-curator-name">Name</label>
+        <input type="text" name="data-curator-name" class="form-control" id="data-curator-name">
+
+        <label class="form-label" for="data-curator-email">Email</label>
+        <input type="text" name="data-curator-email" class="form-control" id="data-curator-email">
+      </fieldset>
+    </div>
+
     <!-- Department -->
     <div class="form-group">
       <label class="form-label-bold" for="department">Department</label>
@@ -55,14 +75,38 @@
 
     <!-- Agency -->
     <div class="form-group">
-      <label class="form-label-bold" for="agency">Agency</label>
-      <p class="form-hint">Agency responsible for meeting this need (optional)</p>
-      <select class="form-control" id="agency">
+      <label class="form-label-bold" for="agency-body">Agency/body</label>
+      <p class="form-hint">Agency/body responsible for meeting this need (optional)</p>
+      <select class="form-control" id="agency-body">
         <option value=""></option>
         <option value="GLA">Gangmasters Licensing Authority</option>
         <option value="HMPO">HM Passport Office</option>
       </select>
     </div>
+
+    <!-- Transaction category -->
+    <fieldset>
+      <legend class="form-label-bold">Transaction category</legend>
+      <p class="form-hint">Help us to categorise your transaction by choosing a type and theme</p>
+
+      <!-- Type -->
+      <div class="form-group">
+        <label class="form-label" for="type">Type</label>
+        <select class="form-control" id="type">
+          <option value="payment">Payment</option>
+          <option value="application">Application</option>
+        </select>
+      </div>
+
+      <!-- Theme -->
+      <div class="form-group">
+        <label class="form-label" for="theme">Theme</label>
+        <select class="form-control" id="theme">
+          <option value="driving">Driving</option>
+          <option value="book-access">Book access to something</option>
+        </select>
+      </div>
+    </fieldset>
 
     <!-- Dependent transactions -->
     <fieldset>
@@ -109,29 +153,18 @@
       </div>
     </fieldset>
 
-    <!-- Transaction category -->
-    <fieldset>
-      <legend class="form-label-bold">Transaction category</legend>
-      <p class="form-hint">Help us to categorise your transaction by choosing a theme and type</p>
-
-      <!-- Theme -->
-      <div class="form-group">
-        <label class="form-label" for="theme">Theme</label>
-        <select class="form-control" id="theme">
-          <option value="driving">Driving</option>
-          <option value="book-access">Book access to something</option>
-        </select>
-      </div>
-
-      <!-- Type -->
-      <div class="form-group">
-        <label class="form-label" for="type">Type</label>
-        <select class="form-control" id="type">
-          <option value="payment">Payment</option>
-          <option value="application">Application</option>
-        </select>
-      </div>
-    </fieldset>
+    <!-- Frequency -->
+    <div class="form-group">
+      <label class="form-label-bold" for="frequency">Frequency</label>
+      <p class="form-hint">Frequency by which someone would access this transaction</p>
+      <select name="frequency" class="form-control" id="frequency">
+        <option value="one-off">One-off</option>
+        <option value="yearly">Yearly</option>
+        <option value="monthly">Monthly</option>
+        <option value="weekly">Weekly</option>
+        <option value="daily">Daily</option>
+      </select>
+    </div>
 
     <!-- Channel -->
     <div class="form-group">
@@ -188,16 +221,6 @@
       </fieldset>
     </div>
 
-    <!-- Frequency -->
-    <div class="form-group">
-      <label class="form-label-bold" for="frequency">Frequency</label>
-      <p class="form-hint">Frequency by which someone would access this transaction</p>
-      <select name="frequency" class="form-control" id="frequency">
-        <option value="monthly">Monthly</option>
-        <option value="annually">Annually</option>
-      </select>
-    </div>
-
     <!--  Interaction components -->
     <div class="form-group">
       <fieldset>
@@ -206,7 +229,7 @@
 
         <label for="eligibility" class="block-label">
           <input type="checkbox" name="interaction-component" value="eligibility" id="eligibility">
-          Eligibility
+          Eligibility check
         </label>
 
         <label for="notification" class="block-label">
@@ -216,12 +239,12 @@
 
         <label for="payment" class="block-label">
           <input type="checkbox" name="interaction-component" value="payment" id="payment">
-          Payment
+          Payment capture
         </label>
 
         <label for="verification" class="block-label">
           <input type="checkbox" name="interaction-component" value="verification" id="verification">
-          Verification
+          Identity verification
         </label>
       </fieldset>
     </div>
@@ -234,36 +257,45 @@
 
         <label for="notify" class="block-label">
           <input type="checkbox" name="gaap-component" value="notify" id="notify">
-          Notify
+          GOV.UK Notify
         </label>
 
         <label for="pay" class="block-label">
           <input type="checkbox" name="gaap-component" value="pay" id="pay">
-          Pay
+          GOV.UK Pay
         </label>
 
         <label for="smart-questions" class="block-label">
           <input type="checkbox" name="gaap-component" value="smart-questions" id="smart-questions">
-          Smart questions
+          GOV.UK Smart Questions
         </label>
 
         <label for="verify" class="block-label">
           <input type="checkbox" name="gaap-component" value="verify" id="verify">
-          Verify
+          GOV.UK Verify
         </label>
       </fieldset>
     </div>
 
-    <!-- Data curator -->
+    <!-- Manual activity check -->
     <div class="form-group">
       <fieldset>
-        <legend class="form-label-bold">Data curator</legend>
-        <p class="form-hint">Name and email of person responsible for collecting cost and usage data</p>
-        <label class="form-label" for="data-curator-name">Name</label>
-        <input type="text" name="data-curator-name" class="form-control" id="data-curator-name">
+        <legend class="form-label-bold">
+          Does the transaction require manual activity during processing?
+        </legend>
 
-        <label class="form-label" for="data-curator-email">Email</label>
-        <input type="text" name="data-curator-email" class="form-control" id="data-curator-email">
+        <label for="manual-activity-required" class="block-label">
+          <input type="radio" name="manual-activity" value="required" id="manual-activity-required">
+          <span class="heading-small">Yes</span><br>
+          People undertake manual activities during the processing of the transaction
+        </label>
+
+        <label for="manual-activity-not-required" class="block-label">
+          <input type="radio" name="manual-activity" value="not-required" id="manual-activity-not-required">
+          <span class="heading-small">No</span><br>
+          People do not undertake manual activities during the processing of the transaction
+        </label>
+
       </fieldset>
     </div>
 
