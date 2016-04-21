@@ -34,13 +34,6 @@
       <input type="text" class="form-control" id="name">
     </div>
 
-    <!-- User need -->
-    <div class="form-group">
-      <label class="form-label-bold" for="user-need">User need</label>
-      <p class="form-hint">User need met by this transaction</p>
-      <textarea class="form-control" id="user-need"></textarea>
-    </div>
-
     <!-- URL -->
     <div class="form-group">
       <label class="form-label-bold" for="url">URL</label>
@@ -48,17 +41,11 @@
       <input type="text" class="form-control" id="url">
     </div>
 
-    <!-- Data curator -->
+    <!-- User need -->
     <div class="form-group">
-      <fieldset>
-        <legend class="form-label-bold">Data curator</legend>
-        <p class="form-hint">Name and email of person responsible for collecting cost and usage data</p>
-        <label class="form-label" for="data-curator-name">Name</label>
-        <input type="text" name="data-curator-name" class="form-control" id="data-curator-name">
-
-        <label class="form-label" for="data-curator-email">Email</label>
-        <input type="text" name="data-curator-email" class="form-control" id="data-curator-email">
-      </fieldset>
+      <label class="form-label-bold" for="user-need">User need</label>
+      <p class="form-hint">User need met by this transaction</p>
+      <textarea class="form-control" id="user-need"></textarea>
     </div>
 
     <!-- Department -->
@@ -123,6 +110,7 @@
       <div class="form-group">
         <label class="form-label" for="type">Type</label>
         <select class="form-control" id="type">
+          <option value=""></option>
           <option value="booking-events-and-resources">Booking events and resources</option>
           <option value="making-a-payment">Making a payment</option>
           <option value="ordering-goods">Ordering goods</option>
@@ -137,11 +125,187 @@
       <div class="form-group">
         <label class="form-label" for="theme">Theme</label>
         <select class="form-control" id="theme">
+          <option value=""></option>
           <option value="business">Business</option>
           <option value="coming-to-the-uk">Coming to the UK</option>
         </select>
       </div>
     </fieldset>
+
+    <!-- Frequency -->
+    <div class="form-group">
+      <label class="form-label-bold" for="frequency">Frequency</label>
+      <p class="form-hint">Frequency by which someone would access this transaction</p>
+      <select name="frequency" class="form-control" id="frequency">
+        <option value="one-off">One-off</option>
+        <option value="yearly">Yearly</option>
+        <option value="monthly">Monthly</option>
+        <option value="weekly">Weekly</option>
+        <option value="daily">Daily</option>
+      </select>
+    </div>
+
+    <!-- Channel -->
+    <div class="form-group">
+      <fieldset>
+        <legend class="form-label-bold">Channels</legend>
+        <p class="form-hint">Channels through which the transaction can be completed</p>
+
+        <label for="online" class="block-label">
+          <input type="checkbox" name="channel" value="online" id="online">
+          Online
+        </label>
+
+        <label for="paper" class="block-label">
+          <input type="checkbox" name="channel" value="paper" id="paper">
+          Paper
+        </label>
+
+        <label for="phone" class="block-label">
+          <input type="checkbox" name="channel" value="phone" id="phone">
+          Phone
+        </label>
+
+        <label for="face-to-face" class="block-label">
+          <input type="checkbox" name="channel" value="face-to-face" id="face-to-face">
+          Face-to-face
+        </label>
+
+        <label for="assisted-digital" class="block-label">
+          <input type="checkbox" name="channel" value="assisted-digital" id="assisted-digital">
+          Assisted digital
+        </label>
+      </fieldset>
+    </div>
+
+    <!--  Interaction components -->
+    <div class="form-group">
+      <fieldset>
+        <legend class="form-label-bold">Interaction components</legend>
+        <p class="form-hint">Interaction components that make up the transaction</p>
+
+        <label for="eligibility" class="block-label" data-target="select-govuk-smart-questions-panel">
+          <input type="checkbox" name="interaction-component" value="eligibility" id="eligibility">
+          Eligibility check
+        </label>
+
+        <div class="panel panel-border-narrow js-hidden" id="select-govuk-smart-questions-panel">
+          <fieldset>
+            <legend class="form-label-bold">
+              Does the transaction use the GOV.UK Smart Questions component on Government as a Platform (GaaP)?
+            </legend>
+
+            <label for="govuk-smart-questions-used" class="block-label">
+              <input type="radio" name="govuk-smart-questions" value="yes" id="govuk-smart-questions-used">
+              Yes
+            </label>
+
+            <label for="govuk-smart-questions-not-used" class="block-label">
+              <input type="radio" name="govuk-smart-questions" value="no" id="govuk-smart-questions-not-used">
+              No
+            </label>
+          </fieldset>
+        </div>
+
+        <label for="notification" class="block-label" data-target="select-govuk-notify-panel">
+          <input type="checkbox" name="interaction-component" value="notification" id="notification">
+          Notification
+        </label>
+
+        <div class="panel panel-border-narrow js-hidden" id="select-govuk-notify-panel">
+          <fieldset>
+            <legend class="form-label-bold">
+              Does the transaction use the GOV.UK Notify component on Government as a Platform (GaaP)?
+            </legend>
+
+            <label for="govuk-notify-used" class="block-label">
+              <input type="radio" name="govuk-notify" value="yes" id="govuk-notify-used">
+              Yes
+            </label>
+
+            <label for="govuk-notify-not-used" class="block-label">
+              <input type="radio" name="govuk-notify" value="no" id="govuk-notify-not-used">
+              No
+            </label>
+          </fieldset>
+        </div>
+
+        <label for="payment" class="block-label" data-target="select-govuk-pay-panel">
+          <input type="checkbox" name="interaction-component" value="payment" id="payment">
+          Payment capture
+        </label>
+
+        <div class="panel panel-border-narrow js-hidden" id="select-govuk-pay-panel">
+          <fieldset>
+            <legend class="form-label-bold">
+              Does the transaction use the GOV.UK Pay component on Government as a Platform (GaaP)?
+            </legend>
+
+            <label for="govuk-pay-used" class="block-label">
+              <input type="radio" name="govuk-pay" value="yes" id="govuk-pay-used">
+              Yes
+            </label>
+
+            <label for="govuk-pay-not-used" class="block-label">
+              <input type="radio" name="govuk-pay" value="no" id="govuk-pay-not-used">
+              No
+            </label>
+          </fieldset>
+        </div>
+
+        <label for="verification" class="block-label" data-target="select-govuk-verify-panel">
+          <input type="checkbox" name="interaction-component" value="verification" id="verification">
+          Identity verification
+        </label>
+
+        <div class="panel panel-border-narrow js-hidden" id="select-govuk-verify-panel">
+          <fieldset>
+            <legend class="form-label-bold">
+              Does the transaction use the GOV.UK Verify component on Government as a Platform (GaaP)?
+            </legend>
+
+            <label for="govuk-verify-used" class="block-label">
+              <input type="radio" name="govuk-verify" value="yes" id="govuk-verify-used">
+              Yes
+            </label>
+
+            <label for="govuk-verify-not-used" class="block-label">
+              <input type="radio" name="govuk-verify" value="no" id="govuk-verify-not-used">
+              No
+            </label>
+          </fieldset>
+        </div>
+
+        <label for="face-to-face-stage" class="block-label">
+          <input type="checkbox" name="interaction-component" value="face-to-face-stage" id="face-to-face-stage">
+          Face-to-face stage
+        </label>
+      </fieldset>
+    </div>
+
+    <!-- Manual activity check -->
+    <div class="form-group">
+      <fieldset>
+        <legend class="form-label-bold">
+          Does the transaction require manual activity in the back office?
+        </legend>
+
+        <p class="form-hint">For example, sorting of post, scanning of documents etc.</p>
+
+        <label for="manual-activity-required" class="block-label">
+          <input type="radio" name="manual-activity" value="required" id="manual-activity-required">
+          <span class="heading-small">Yes</span><br>
+          Back office staff undertake manual activities during the processing of the transaction
+        </label>
+
+        <label for="manual-activity-not-required" class="block-label">
+          <input type="radio" name="manual-activity" value="not-required" id="manual-activity-not-required">
+          <span class="heading-small">No</span><br>
+          Back office do not undertake manual activities during the processing of the transaction
+        </label>
+
+      </fieldset>
+    </div>
 
     <!-- Dependent transactions -->
     <fieldset>
@@ -218,127 +382,16 @@
       </div>
     </fieldset>
 
-    <!-- Frequency -->
-    <div class="form-group">
-      <label class="form-label-bold" for="frequency">Frequency</label>
-      <p class="form-hint">Frequency by which someone would access this transaction</p>
-      <select name="frequency" class="form-control" id="frequency">
-        <option value="one-off">One-off</option>
-        <option value="yearly">Yearly</option>
-        <option value="monthly">Monthly</option>
-        <option value="weekly">Weekly</option>
-        <option value="daily">Daily</option>
-      </select>
-    </div>
-
-    <!-- Channel -->
+    <!-- Data curator -->
     <div class="form-group">
       <fieldset>
-        <legend class="form-label-bold">Channels</legend>
-        <p class="form-hint">Channels through which the transaction can be completed</p>
+        <legend class="form-label-bold">Data curator</legend>
+        <p class="form-hint">Name and email of person responsible for collecting cost and usage data</p>
+        <label class="form-label" for="data-curator-name">Name</label>
+        <input type="text" name="data-curator-name" class="form-control" id="data-curator-name">
 
-        <label for="online" class="block-label">
-          <input type="checkbox" name="channel" value="online" id="online">
-          Online
-        </label>
-
-        <label for="paper" class="block-label">
-          <input type="checkbox" name="channel" value="paper" id="paper">
-          Paper
-        </label>
-
-        <label for="phone" class="block-label">
-          <input type="checkbox" name="channel" value="phone" id="phone">
-          Phone
-        </label>
-
-        <label for="face-to-face" class="block-label">
-          <input type="checkbox" name="channel" value="face-to-face" id="face-to-face">
-          Face-to-face
-        </label>
-
-        <label for="assisted-digital" class="block-label">
-          <input type="checkbox" name="channel" value="assisted-digital" id="assisted-digital">
-          Assisted digital
-        </label>
-      </fieldset>
-    </div>
-
-    <!--  Interaction components -->
-    <div class="form-group">
-      <fieldset>
-        <legend class="form-label-bold">Interaction components</legend>
-        <p class="form-hint">Interaction components that make up the transaction</p>
-
-        <label for="eligibility" class="block-label">
-          <input type="checkbox" name="interaction-component" value="eligibility" id="eligibility">
-          Eligibility check
-        </label>
-
-        <label for="notification" class="block-label">
-          <input type="checkbox" name="interaction-component" value="notification" id="notification">
-          Notification
-        </label>
-
-        <label for="payment" class="block-label">
-          <input type="checkbox" name="interaction-component" value="payment" id="payment">
-          Payment capture
-        </label>
-
-        <label for="verification" class="block-label">
-          <input type="checkbox" name="interaction-component" value="verification" id="verification">
-          Identity verification
-        </label>
-      </fieldset>
-    </div>
-
-    <!--  GaaP components -->
-    <div class="form-group">
-      <fieldset>
-        <legend class="form-label-bold">GaaP components</legend>
-        <p class="form-hint">GaaP (Government as a Platform) components used by the transaction, if any</p>
-
-        <label for="notify" class="block-label">
-          <input type="checkbox" name="gaap-component" value="notify" id="notify">
-          GOV.UK Notify
-        </label>
-
-        <label for="pay" class="block-label">
-          <input type="checkbox" name="gaap-component" value="pay" id="pay">
-          GOV.UK Pay
-        </label>
-
-        <label for="smart-questions" class="block-label">
-          <input type="checkbox" name="gaap-component" value="smart-questions" id="smart-questions">
-          GOV.UK Smart Questions
-        </label>
-
-        <label for="verify" class="block-label">
-          <input type="checkbox" name="gaap-component" value="verify" id="verify">
-          GOV.UK Verify
-        </label>
-      </fieldset>
-    </div>
-
-    <!-- Manual activity check -->
-    <div class="form-group">
-      <fieldset>
-        <legend class="form-label-bold">
-          Does the transaction require manual activity during processing?
-        </legend>
-
-        <label for="manual-activity-required" class="block-label">
-          <input type="radio" name="manual-activity" value="required" id="manual-activity-required">
-          <span class="heading-small">Yes</span><br>
-          People undertake manual activities during the processing of the transaction
-        </label>
-
-        <label for="manual-activity-not-required" class="block-label">
-          <input type="radio" name="manual-activity" value="not-required" id="manual-activity-not-required">
-          <span class="heading-small">No</span><br>
-          People do not undertake manual activities during the processing of the transaction
-        </label>
-
+        <label class="form-label" for="data-curator-email">Email</label>
+        <input type="text" name="data-curator-email" class="form-control" id="data-curator-email">
       </fieldset>
     </div>
 
