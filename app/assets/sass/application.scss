@@ -39,3 +39,31 @@
 }
 
 // Add extra styles here, or re-organise the Sass files in whichever way makes most sense to you
+
+.definition-group {
+  padding: 0.5em;
+
+  @include core-16;
+  span {
+    font-weight: bold;
+    display: inline-block;
+    margin-bottom: 0.8em;
+  }
+
+
+  @include media(mobile) {
+    dt::after {
+      content: ":"
+    }
+  }
+
+  dd {
+    @include media(tablet) {
+      margin-bottom: 0.8em;
+    }
+  }
+
+  &.dimensions, &.information {
+    background: $light-blue-25;
+  }
+}

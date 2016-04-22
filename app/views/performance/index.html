@@ -9,292 +9,290 @@
 <main id="content" role="main">
   <div class="grid-row">
     <div class="column-two-thirds">
-
-      <h1 class="heading-xlarge">Performance platform</h1>
-
+      <h1 class="heading-xlarge">Transaction performance</h1>
       <p class="lede">
-        The Performance Platform is for comparing the performance of UK Government services. It's intended for civil servants, but accessible to everyone.
+        Download data about the performance of transactions used to deliver Government services.
       </p>
 
-      <p>Government services should meet user's needs in a cost-effective and efficient way. To make sure this happens, we collect standardised data to compare how different services are doing.</p>
-
-      <p>The data is available to download for free by anyone.
-
-      <h2 class="heading-medium">About the data</h2>
-
-      <p>We collect data about <em>transactions</em>. A transaction forms part of an end-to-end service; It's the process which people go through to create, update, or delete their information or status with Government.</p>
-
-
-      <p>We collect two types of data about transactions: Characteristics (theme, type, etc.) and Facts (cost, usage, etc).</p>
-
-      <p>Use the Characteristics to make sure you're doing fair comparisons of the Facts.</p>
-
-      <h3 class="heading-small">Characteristics</h3>
-      <table>
-        <tr>
-          <th>Term</th>
-          <th>Definition</th>
-          <th>Example values</th>
-        </tr>
-        <tr>
-          <td>Channel</td>
-          <td>We collect transaction data seperately for each delivery channel.</td>
-          <td>Online, paper, or phone.</td>
-        </tr>
-        <tr>
-          <td>User need</td>
-          <td>The need the service which the transaction is part of solves.</td>
-          <td>As a _____, I need to ________, so that _________.</td>
-        <tr>
-          <td>Delivery organisation</td>
-          <td>Split by department and public body.</td>
-          <td>Full list found <a href="https://www.gov.uk/api/organisations" target="_blank">here.</a></td>
-        </tr>
-        <tr>
-          <td>Theme</td>
-          <td>The high level theme the transaction fits into.</td>
-          <td>Driving, business, etc.</td>
-        </tr>
-        <tr>
-          <td>Type</td>
-          <td>What type of interaction the user has.</td>
-          <td>Register an item, Apply for financial support, etc.</td>
-        </tr>
-      </table>
-
-      <h3 class="heading-small">Facts</h3>
-      <table>
-        <tr>
-          <td>Cost per transaction</td>
-          <td>The amount spent by Government to deliver the transaction. This figure does not include capital expenditure (set-up costs) or money paid as part of the service (e.g benefits or grants).</td>
-        </tr>
-        <tr>
-          <td>Usage</td>
-          <td>The number of individual transactions completed. Bulk transactions are counted seperately - for example, paying tax on 3 vehicles at the same time counts as 3 transactions.</td>
-        </tr>
-      </table>
-
-      <h2 class="heading-medium">Download the data</h2>
-
-      <p>Download data as a CSV file.</p>
-
-      <p><a href="https://docs.google.com/spreadsheets/d/18zlIlwnFscJthjmn1i25-y9xwXvOBf25erEZ7KBheb8/edit#gid=0" target="_blank" class="button button-start">Download all data</a></p>
-
-      <details>
-
-        <summary><span class="summary">Download filtered data</span></summary>
-
-        <div class="panel panel-border-narrow">
-
-          <form>
-
-            <!-- Transactions filter -->
-            <fieldset>
-              <legend>Choose transactions to include:</legend>
-
-              <label for="all-transactions" class="block-label">
-                <input id="all-transactions" type="radio" name="transactions" value="all-transactions">
-                All transactions
-              </label>
-
-              <label for="transactions-for-organisations" class="block-label" data-target="select-organisations-panel">
-                <input id="transactions-for-organisations" type="radio" name="transactions" value="transactions-for-organisations">
-                Transactions for selected departments and agencies
-              </label>
-
-              <div class="panel panel-border-narrow js-hidden" id="select-organisations-panel">
-                <label class="form-label" for="organisations-select">
-                  Select one or more departments or agencies
-                </label>
-                <select class="form-control" id="organisations-select" name="organisations-select" multiple="multiple"  style="width: 100%">
-                  <option value="DVLA">Department for Transport</option>
-                  <option value="GLA">Gangmasters Licensing Authority</option>
-                  <option value="HMPO">HM Passport Office</option>
-                  <option value="HMRC">HM Revenue and Customs</option>
-                  <option value="Home Office">Home Office</option>
-                </select>
-              </div>
-
-              <label for="selected-transactions" class="block-label" data-target="select-transactions-panel">
-                <input id="selected-transactions" type="radio" name="transactions" value="selected-transactions">
-                Selected transactions
-              </label>
-
-              <div class="panel panel-border-narrow js-hidden" id="select-transactions-panel">
-                <label class="form-label" for="transactions-select">
-                  Select one or more transactions
-                </label>
-                <select class="form-control" id="transactions-select" multiple="multiple" style="width: 100%">
-                  <option value="1">Access to birth records for adopted adults</option>
-                  <option value="2">Adding details to the adoption contact register</option>
-                  <option value="3">Apply for a license</option>
-                  <option value="4">Licensing system for gangmasters</option>
-                </select>
-              </div>
-
-            </fieldset>
-
-            <br>
-            <!-- Reporting periods filter -->
-            <fieldset>
-              <legend>Choose periods to report on:</legend>
-
-              <label for="reporting-quarterly" class="block-label" data-target="select-quarters-panel">
-                <input id="reporting-quarterly" type="radio" name="reporting-period" value="quarterly">
-                Quarterly
-              </label>
-
-              <div class="panel panel-border-narrow js-hidden" id="select-quarters-panel">
-                <label class="block-label" for="quarter-1">
-                  <input id="quarter-1" name="quarters" type="checkbox" value="jan-mar-2016">
-                  Jan - Mar 2016
-                </label>
-
-                <label class="block-label" for="quarter-2">
-                  <input id="quarter-2" name="quarters" type="checkbox" value="oct-dec-2015">
-                  Oct - Dec 2015
-                </label>
-
-                <label class="block-label" for="quarter-3">
-                  <input id="quarter-3" name="quarters" type="checkbox" value="jul-sep-2015">
-                  Jul - Sep 2015
-                </label>
-
-                <label class="block-label" for="quarter-4">
-                  <input id="quarter-4" name="quarters" type="checkbox" value="may-jun-2015">
-                  May - Jun 2015
-                </label>
-              </div>
-
-              <label for="reporting-yearly" class="block-label" data-target="choose-year-start-panel">
-                <input id="reporting-yearly" type="radio" name="reporting-period" value="yearly">
-                Yearly
-              </label>
-
-              <div class="panel panel-border-narrow js-hidden" id="choose-year-start-panel">
-                <p class="form-hint">Choose a start month of a 12-month period</p>
-                <label for="year-jan-dec" class="block-label" data-target="select-years-jan-dec-panel">
-                  <input id="year-jan-dec" type="radio" name="year-range" value="jan-dec">
-                  January
-                </label>
-
-                <div class="panel panel-border-narrow js-hidden" id="select-years-jan-dec-panel">
-                  <label class="block-label" for="jan-2015-dec-2015">
-                    <input id="jan-2015-dec-2015" name="jan-2015-dec-2015" type="checkbox" value="jan-2015-dec-2015">
-                    Jan 2015 - Dec 2015
-                  </label>
-
-                  <label class="block-label" for="jan-2014-dec-2014">
-                    <input id="jan-2014-dec-2014" name="jan-2014-dec-2014" type="checkbox" value="jan-2014-dec-2014">
-                    Jan 2014 - Dec 2014
-                  </label>
-                </div>
-
-                <label for="year-apr-mar" class="block-label" data-target="select-years-apr-mar-panel">
-                  <input id="year-apr-mar" type="radio" name="year-range" value="apr-mar">
-                  April
-                </label>
-
-                <div class="panel panel-border-narrow js-hidden" id="select-years-apr-mar-panel">
-                  <label class="block-label" for="apr-2015-mar-2016">
-                    <input id="apr-2015-mar-2016" name="apr-2015-mar-2016" type="checkbox" value="apr-2015-mar-2016">
-                    Apr 2015 - Mar 2016
-                  </label>
-
-                  <label class="block-label" for="apr-2014-mar-2015">
-                    <input id="apr-2014-mar-2015" name="apr-2014-mar-2015" type="checkbox" value="apr-2014-mar-2015">
-                    Apr 2014 - Mar 2015
-                  </label>
-                </div>
-
-                <label for="year-jul-jun" class="block-label" data-target="select-years-jul-jun-panel">
-                  <input id="year-jul-jun" type="radio" name="year-range" value="jul-jun">
-                  July
-                </label>
-
-                <div class="panel panel-border-narrow js-hidden" id="select-years-jul-jun-panel">
-                  <label class="block-label" for="jul-2014-jun-2015">
-                    <input id="jul-2014-jun-2015" name="jul-2014-jun-2015" type="checkbox" value="jul-2014-jun-2015">
-                    Jul 2014 - Jun 2015
-                  </label>
-
-                  <label class="block-label" for="jul-2013-jun-2014">
-                    <input id="jul-2013-jun-2014" name="jul-2013-jun-2014" type="checkbox" value="jul-2013-jun-2014">
-                    Jul 2013 - Jun 2014
-                  </label>
-                </div>
-
-                <label for="year-oct-sep" class="block-label" data-target="select-years-oct-sep-panel">
-                  <input id="year-oct-sep" type="radio" name="year-range" value="oct-sep">
-                  October
-                </label>
-
-                <div class="panel panel-border-narrow js-hidden" id="select-years-oct-sep-panel">
-                  <label class="block-label" for="oct-2014-sep-2015">
-                    <input id="oct-2014-sep-2015" name="oct-2014-sep-2015" type="checkbox" value="oct-2014-sep-2015">
-                    Oct 2014 - Sep 2015
-                  </label>
-
-                  <label class="block-label" for="oct-2013-sep-2014">
-                    <input id="oct-2013-sep-2014" name="oct-2013-sept-2014" type="checkbox" value="oct-2013-sep-2014">
-                    Oct 2013 - Sep 2014
-                  </label>
-                </div>
-              </div>
-            </fieldset>
-
-            <br>
-            <!-- Characteristics filter -->
-            <fieldset>
-              <legend>Select characteristics to include:</legend>
-
-              <label class="block-label" for="characteristic-1">
-                <input id="characteristic-1" name="characteristics" type="checkbox" value="user-need">
-                User need
-              </label>
-              <label class="block-label" for="characteristic-2">
-                <input id="characteristic-2" name="characteristics" type="checkbox" value="delivery-organisation">
-                Delivery organisation
-              </label>
-              <label class="block-label" for="characteristic-3">
-                <input id="characteristic-3" name="characteristics" type="checkbox" value="theme">
-                Theme
-              </label>
-              <label class="block-label" for="characteristic-4">
-                <input id="characteristic-4" name="characteristics" type="checkbox" value="type">
-                Type
-              </label>
-            </fieldset>
-
-            <br>
-            <!-- Facts filter -->
-            <fieldset>
-              <legend>Select facts to include:</legend>
-
-              <label class="block-label" for="fact-1">
-                <input id="fact-1" name="facts" type="checkbox" value="cost-per-transaction">
-                Cost per transaction
-              </label>
-              <label class="block-label" for="fact-2">
-                <input id="fact-2" name="facts" type="checkbox" value="usage">
-                Usage
-              </label>
-            </fieldset>
-
-          </form>
-
-        </div>
-
-        <p><a href="https://docs.google.com/spreadsheets/d/1fZM4xJduzXmfCGlH1wEgMiem8uz-sOV86FsOwWxHjiY/edit#gid=0" target="_blank" class="button button-start">Download filtered data</a></p>
-
-      </details>
-
-      <h2 class="heading-medium">Other data resources</h2>
-
-      <p>To find more open Government data, visit <a href="https://data.gov.uk/">data.gov.uk</a></p>
-
+      <p>Citizens make use of Government services by interacting with one or more transactions through online or offline channels. Each transaction will result in a change to the information that Government holds about an individual, legal entity or physical item.</p>
     </div>
   </div>
+
+  <p>Last updated: 22nd April 2016</p>
+
+  <p><a href="https://docs.google.com/spreadsheets/d/18zlIlwnFscJthjmn1i25-y9xwXvOBf25erEZ7KBheb8/edit#gid=0" target="_blank" class="button button-start">Download all data</a></p>
+
+  <details>
+
+    <summary><span class="summary">Download filtered data</span></summary>
+
+    <div class="panel panel-border-narrow">
+
+      <form>
+
+        <!-- Transactions filter -->
+        <fieldset>
+          <legend>Choose transactions to include:</legend>
+
+          <label for="all-transactions" class="block-label">
+            <input id="all-transactions" type="radio" name="transactions" value="all-transactions">
+            All transactions
+          </label>
+
+          <label for="transactions-for-organisations" class="block-label" data-target="select-organisations-panel">
+            <input id="transactions-for-organisations" type="radio" name="transactions" value="transactions-for-organisations">
+            Transactions for selected departments and agencies
+          </label>
+
+          <div class="panel panel-border-narrow js-hidden" id="select-organisations-panel">
+            <label class="form-label" for="organisations-select">
+              Select one or more departments or agencies
+            </label>
+            <select class="form-control" id="organisations-select" name="organisations-select" multiple="multiple"  style="width: 100%">
+              <option value="DVLA">Department for Transport</option>
+              <option value="GLA">Gangmasters Licensing Authority</option>
+              <option value="HMPO">HM Passport Office</option>
+              <option value="HMRC">HM Revenue and Customs</option>
+              <option value="Home Office">Home Office</option>
+            </select>
+          </div>
+
+          <label for="selected-transactions" class="block-label" data-target="select-transactions-panel">
+            <input id="selected-transactions" type="radio" name="transactions" value="selected-transactions">
+            Selected transactions
+          </label>
+
+          <div class="panel panel-border-narrow js-hidden" id="select-transactions-panel">
+            <label class="form-label" for="transactions-select">
+              Select one or more transactions
+            </label>
+            <select class="form-control" id="transactions-select" multiple="multiple" style="width: 100%">
+              <option value="1">Access to birth records for adopted adults</option>
+              <option value="2">Adding details to the adoption contact register</option>
+              <option value="3">Apply for a license</option>
+              <option value="4">Licensing system for gangmasters</option>
+            </select>
+          </div>
+
+        </fieldset>
+
+        <br>
+        <!-- Reporting periods filter -->
+        <fieldset>
+          <legend>Choose periods to report on:</legend>
+
+          <label for="reporting-quarterly" class="block-label" data-target="select-quarters-panel">
+            <input id="reporting-quarterly" type="radio" name="reporting-period" value="quarterly">
+            Quarterly
+          </label>
+
+          <div class="panel panel-border-narrow js-hidden" id="select-quarters-panel">
+            <label class="block-label" for="quarter-1">
+              <input id="quarter-1" name="quarters" type="checkbox" value="jan-mar-2016">
+              Jan - Mar 2016
+            </label>
+
+            <label class="block-label" for="quarter-2">
+              <input id="quarter-2" name="quarters" type="checkbox" value="oct-dec-2015">
+              Oct - Dec 2015
+            </label>
+
+            <label class="block-label" for="quarter-3">
+              <input id="quarter-3" name="quarters" type="checkbox" value="jul-sep-2015">
+              Jul - Sep 2015
+            </label>
+
+            <label class="block-label" for="quarter-4">
+              <input id="quarter-4" name="quarters" type="checkbox" value="may-jun-2015">
+              May - Jun 2015
+            </label>
+          </div>
+
+          <label for="reporting-yearly" class="block-label" data-target="choose-year-start-panel">
+            <input id="reporting-yearly" type="radio" name="reporting-period" value="yearly">
+            Yearly
+          </label>
+
+          <div class="panel panel-border-narrow js-hidden" id="choose-year-start-panel">
+            <p class="form-hint">Choose a start month of a 12-month period</p>
+            <label for="year-jan-dec" class="block-label" data-target="select-years-jan-dec-panel">
+              <input id="year-jan-dec" type="radio" name="year-range" value="jan-dec">
+              January
+            </label>
+
+            <div class="panel panel-border-narrow js-hidden" id="select-years-jan-dec-panel">
+              <label class="block-label" for="jan-2015-dec-2015">
+                <input id="jan-2015-dec-2015" name="jan-2015-dec-2015" type="checkbox" value="jan-2015-dec-2015">
+                Jan 2015 - Dec 2015
+              </label>
+
+              <label class="block-label" for="jan-2014-dec-2014">
+                <input id="jan-2014-dec-2014" name="jan-2014-dec-2014" type="checkbox" value="jan-2014-dec-2014">
+                Jan 2014 - Dec 2014
+              </label>
+            </div>
+
+            <label for="year-apr-mar" class="block-label" data-target="select-years-apr-mar-panel">
+              <input id="year-apr-mar" type="radio" name="year-range" value="apr-mar">
+              April
+            </label>
+
+            <div class="panel panel-border-narrow js-hidden" id="select-years-apr-mar-panel">
+              <label class="block-label" for="apr-2015-mar-2016">
+                <input id="apr-2015-mar-2016" name="apr-2015-mar-2016" type="checkbox" value="apr-2015-mar-2016">
+                Apr 2015 - Mar 2016
+              </label>
+
+              <label class="block-label" for="apr-2014-mar-2015">
+                <input id="apr-2014-mar-2015" name="apr-2014-mar-2015" type="checkbox" value="apr-2014-mar-2015">
+                Apr 2014 - Mar 2015
+              </label>
+            </div>
+
+            <label for="year-jul-jun" class="block-label" data-target="select-years-jul-jun-panel">
+              <input id="year-jul-jun" type="radio" name="year-range" value="jul-jun">
+              July
+            </label>
+
+            <div class="panel panel-border-narrow js-hidden" id="select-years-jul-jun-panel">
+              <label class="block-label" for="jul-2014-jun-2015">
+                <input id="jul-2014-jun-2015" name="jul-2014-jun-2015" type="checkbox" value="jul-2014-jun-2015">
+                Jul 2014 - Jun 2015
+              </label>
+
+              <label class="block-label" for="jul-2013-jun-2014">
+                <input id="jul-2013-jun-2014" name="jul-2013-jun-2014" type="checkbox" value="jul-2013-jun-2014">
+                Jul 2013 - Jun 2014
+              </label>
+            </div>
+
+            <label for="year-oct-sep" class="block-label" data-target="select-years-oct-sep-panel">
+              <input id="year-oct-sep" type="radio" name="year-range" value="oct-sep">
+              October
+            </label>
+
+            <div class="panel panel-border-narrow js-hidden" id="select-years-oct-sep-panel">
+              <label class="block-label" for="oct-2014-sep-2015">
+                <input id="oct-2014-sep-2015" name="oct-2014-sep-2015" type="checkbox" value="oct-2014-sep-2015">
+                Oct 2014 - Sep 2015
+              </label>
+
+              <label class="block-label" for="oct-2013-sep-2014">
+                <input id="oct-2013-sep-2014" name="oct-2013-sept-2014" type="checkbox" value="oct-2013-sep-2014">
+                Oct 2013 - Sep 2014
+              </label>
+            </div>
+          </div>
+        </fieldset>
+
+        <br>
+        <!-- Characteristics filter -->
+        <fieldset>
+          <legend>Select characteristics to include:</legend>
+
+          <label class="block-label" for="characteristic-1">
+            <input id="characteristic-1" name="characteristics" type="checkbox" value="user-need">
+            User need
+          </label>
+          <label class="block-label" for="characteristic-2">
+            <input id="characteristic-2" name="characteristics" type="checkbox" value="delivery-organisation">
+            Delivery organisation
+          </label>
+          <label class="block-label" for="characteristic-3">
+            <input id="characteristic-3" name="characteristics" type="checkbox" value="theme">
+            Theme
+          </label>
+          <label class="block-label" for="characteristic-4">
+            <input id="characteristic-4" name="characteristics" type="checkbox" value="type">
+            Type
+          </label>
+        </fieldset>
+
+        <br>
+        <!-- Facts filter -->
+        <fieldset>
+          <legend>Select facts to include:</legend>
+
+          <label class="block-label" for="fact-1">
+            <input id="fact-1" name="facts" type="checkbox" value="cost-per-transaction">
+            Cost per transaction
+          </label>
+          <label class="block-label" for="fact-2">
+            <input id="fact-2" name="facts" type="checkbox" value="usage">
+            Usage
+          </label>
+        </fieldset>
+
+      </form>
+
+    </div>
+
+    <p><a href="https://docs.google.com/spreadsheets/d/1fZM4xJduzXmfCGlH1wEgMiem8uz-sOV86FsOwWxHjiY/edit#gid=0" target="_blank" class="button button-start">Download filtered data</a></p>
+
+  </details>
+
+  <div class="grid-row">
+    <div class="column-two-thirds">
+      <h2 class="heading-medium">About the data</h2>
+
+      <p>The data is provided at transaction-level and can be analysed and compared using one or more <em>characteristics</em> and <em>performance indicators</em>. <em>Background information</em> is also provided to help you understand what a transaction does, where it can be found, and who is responsible for providing data about it.</p>
+    </div>
+  </div>
+
+  <dl>
+    <div class="definition-group dimensions">
+      <div class="grid-row">
+        <span class="column-quarter">Characteristics</span>
+        <dt class="column-quarter">Department</dt><dd class="column-half">Morbi ac velit at orci consectetur dignissim sed et odio.</dd>
+        <span class="column-quarter">&nbsp;</span>
+        <dt class="column-quarter">Agency/Body</dt><dd class="column-half">Donec in dapibus libero, et tempor neque.</dd>
+        <span class="column-quarter">&nbsp;</span>
+        <dt class="column-quarter">Category</dt><dd class="column-half">Nullam lacinia neque nec dolor consequat finibus.</dd>
+        <span class="column-quarter">&nbsp;</span>
+        <dt class="column-quarter">Frequency of Interaction</dt><dd class="column-half">Duis quis placerat sapien.</dd>
+        <span class="column-quarter">&nbsp;</span>
+        <dt class="column-quarter">Transactions Dependent On</dt><dd class="column-half">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</dd>
+        <span class="column-quarter">&nbsp;</span>
+        <dt class="column-quarter">Interaction Components</dt><dd class="column-half">Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae.</dd>
+        <span class="column-quarter">&nbsp;</span>
+        <dt class="column-quarter">GaaP Components</dt><dd class="column-half">Etiam vitae nisl posuere, efficitur nibh nec, mattis mi.</dd>
+        <span class="column-quarter">&nbsp;</span>
+        <dt class="column-quarter">Manual Activity</dt><dd class="column-half">Nunc in erat ac metus auctor rhoncus.</dd>
+        </div>
+      </div>
+    </div>
+
+    <div class="definition-group facts">
+      <div class="grid-row">
+        <span class="column-quarter">Performance indicators</span>
+        <dt class="column-quarter">Started Transactions</dt><dd class="column-half">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</dd>
+        <span class="column-quarter">&nbsp;</span>
+        <dt class="column-quarter">Completed Transactions</dt><dd class="column-half">Nullam ac elit at leo egestas congue.</dd>
+        <span class="column-quarter">&nbsp;</span>
+        <dt class="column-quarter">Total Processing Cost</dt><dd class="column-half">Duis quis placerat sapien.</dd>
+        <span class="column-quarter">&nbsp;</span>
+        <dt class="column-quarter">Cost % Operational Spend</dt><dd class="column-half">Vivamus sit amet mi vel neque mollis feugiat.</dd>
+      </div>
+    </div>
+
+    <div class="definition-group information">
+      <div class="grid-row">
+        <span class="column-quarter">Background information</span>
+        <dt class="column-quarter">User Need</dt><dd class="column-half">Sed pharetra, quam sit amet dignissim luctus, lacus enim rutrum libero, a viverra odio lorem sed erat.</dd>
+        <span class="column-quarter">&nbsp;</span>
+        <dt class="column-quarter">URL</dt><dd class="column-half">Duis quis placerat sapien.</dd>
+        <span class="column-quarter">&nbsp;</span>
+        <dt class="column-quarter">Data Curator</dt><dd class="column-half">Morbi ac velit at orci consectetur dignissim sed et odio.</dd>
+      </div>
+    </div>
+  </dl>
+
+
+  <h2 class="heading-medium">Other data resources</h2>
+
+  <p>To find more open Government data, visit <a href="https://data.gov.uk/">data.gov.uk</a></p>
+
+    </div>
   <script type="text/javascript">
     $('select#transactions-select').select2({
       allowClear: true,
