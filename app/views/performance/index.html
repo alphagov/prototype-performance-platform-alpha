@@ -189,37 +189,56 @@
         <!-- Characteristics filter -->
         <fieldset>
           <legend>Select characteristics to include:</legend>
-
           <label class="block-label" for="characteristic-1">
-            <input id="characteristic-1" name="characteristics" type="checkbox" value="user-need">
-            User need
+            <input id="characteristic-1" name="characteristics" type="checkbox" value="department">
+            Department
           </label>
           <label class="block-label" for="characteristic-2">
-            <input id="characteristic-2" name="characteristics" type="checkbox" value="delivery-organisation">
-            Delivery organisation
+            <input id="characteristic-2" name="characteristics" type="checkbox" value="agency-body">
+            Agency/Body
           </label>
           <label class="block-label" for="characteristic-3">
-            <input id="characteristic-3" name="characteristics" type="checkbox" value="theme">
-            Theme
+            <input id="characteristic-3" name="characteristics" type="checkbox" value="category">
+            Category
           </label>
           <label class="block-label" for="characteristic-4">
-            <input id="characteristic-4" name="characteristics" type="checkbox" value="type">
-            Type
+            <input id="characteristic-4" name="characteristics" type="checkbox" value="transactions-dependent-on">
+            Transactions Dependent On
+          </label>
+          <label class="block-label" for="characteristic-5">
+            <input id="characteristic-5" name="characteristics" type="checkbox" value="interaction-components">
+            Interaction Components
+          </label>
+          <label class="block-label" for="characteristic-6">
+            <input id="characteristic-6" name="characteristics" type="checkbox" value="gaap-components">
+            GaaP Components
+          </label>
+          <label class="block-label" for="characteristic-7">
+            <input id="characteristic-7" name="characteristics" type="checkbox" value="manual-activity">
+            Manual Activity
           </label>
         </fieldset>
 
         <br>
-        <!-- Facts filter -->
+        <!-- Metrics filter -->
         <fieldset>
-          <legend>Select facts to include:</legend>
+          <legend>Select metrics to include:</legend>
 
           <label class="block-label" for="fact-1">
-            <input id="fact-1" name="facts" type="checkbox" value="cost-per-transaction">
-            Cost per transaction
+            <input id="fact-1" name="metrics" type="checkbox" value="started-transactions">
+            Started Transactions
           </label>
           <label class="block-label" for="fact-2">
-            <input id="fact-2" name="facts" type="checkbox" value="usage">
-            Usage
+            <input id="fact-2" name="metrics" type="checkbox" value="completed-transactions">
+            Completed Transactions
+          </label>
+          <label class="block-label" for="fact-3">
+            <input id="fact-3" name="metrics" type="checkbox" value="total-processing-cost">
+            Total Processing Cost
+          </label>
+          <label class="block-label" for="fact-4">
+            <input id="fact-4" name="metrics" type="checkbox" value="cost-pct-operational-spend">
+            Cost % Operational Spend
           </label>
         </fieldset>
 
@@ -235,11 +254,11 @@
     <div class="column-two-thirds">
       <h2 class="heading-medium">About the data</h2>
 
-      <p>The data is provided at transaction-level and can be analysed and compared using one or more <em>characteristics</em> and <em>performance indicators</em>. <em>Background information</em> is also provided to help you understand what a transaction does, where it can be found, and who is responsible for providing data about it.</p>
+      <p>The data is provided at transaction-level and can be analysed and compared using one or more <em>characteristics</em> and <em>metrics</em>. <em>Background information</em> is also provided to help you understand what a transaction does, where it can be found, and who is responsible for providing data about it.</p>
     </div>
   </div>
 
-  <div class="group definition-group dimensions">
+  <div class="group definition-group characteristics">
     <h3>Characteristics</h3>
     <dl>
       <dt>Department</dt><dd>Morbi ac velit at orci consectetur dignissim sed et odio.</dd>
@@ -253,8 +272,8 @@
     </dl>
   </div>
 
-  <div class="group definition-group facts">
-    <h3>Performance indicators</h3>
+  <div class="group definition-group metrics">
+    <h3>Metrics</h3>
     <dl>
       <dt>Started Transactions</dt><dd>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</dd>
       <dt>Completed Transactions</dt><dd>Nullam ac elit at leo egestas congue.</dd>
