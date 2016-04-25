@@ -2062,6 +2062,7 @@ input[type=number] {
 }
 
 .definition-group {
+  margin-bottom: 0.5em;
   padding: 0.5em;
   font-family: "nta", Arial, sans-serif;
   font-size: 14px;
@@ -2077,7 +2078,7 @@ input[type=number] {
   }
 }
 
-.definition-group span {
+.definition-group h3 {
   font-weight: bold;
   display: inline-block;
   margin-bottom: 0.8em;
@@ -2089,12 +2090,31 @@ input[type=number] {
   }
 }
 
-@media (min-width: 641px) {
-  .definition-group dd {
-    margin-bottom: 0.8em;
-  }
+.definition-group dd {
+  margin-bottom: 0.8em;
 }
 
 .definition-group.dimensions, .definition-group.information {
   background: #d5e8f3;
+}
+
+@media (min-width: 769px) {
+  h3 {
+    width: 25%;
+    float: left;
+  }
+  dl {
+    width: 75%;
+    float: right;
+  }
+  dt, dd {
+    float: left;
+  }
+  dt {
+    clear: left;
+    width: 33%;
+  }
+  dd {
+    width: 67%;
+  }
 }

@@ -41,15 +41,15 @@
 // Add extra styles here, or re-organise the Sass files in whichever way makes most sense to you
 
 .definition-group {
+  margin-bottom: 0.5em;
   padding: 0.5em;
 
   @include core-16;
-  span {
+  h3 {
     font-weight: bold;
     display: inline-block;
     margin-bottom: 0.8em;
   }
-
 
   @include media(mobile) {
     dt::after {
@@ -58,12 +58,35 @@
   }
 
   dd {
-    @include media(tablet) {
-      margin-bottom: 0.8em;
-    }
+    margin-bottom: 0.8em;
   }
 
   &.dimensions, &.information {
     background: $light-blue-25;
+  }
+}
+
+@include media(desktop) {
+  h3 {
+    width: 25%;
+    float: left;
+  }
+
+  dl {
+    width: 75%;
+    float: right;
+  }
+
+  dt, dd {
+    float: left;
+  }
+
+  dt {
+    clear: left;
+    width: 33%;
+  }
+
+  dd {
+    width: 67%;
   }
 }
