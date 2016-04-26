@@ -15,22 +15,19 @@
       Tell us about your transaction
     </h1>
 
-    <p>
-      Please complete the form below.
-    </p>
-
     <div class="grid-row">
       <p class="column-two-thirds">
-        The information provided will be used to give context for,
-        and to aid comparison of, cost and usage data that you will be
-        asked to provide on a regular basis.
+        A transaction is the whole process that a person needs to go through to create, update, or delete their information and status with government.
+      </p>
+      <p class="column-two-thirds">
+        The information you provide below will be used to give context for transaction data that you will be asked to provide on a regular basis.
       </p>
     </div>
 
     <!-- Transaction name -->
     <div class="form-group">
       <label class="form-label-bold" for="name">Name</label>
-      <p class="form-hint">e.g. Vehicle tax: renewals</p>
+      <p class="form-hint">e.g. Renewal of vehicle tax</p>
       <input type="text" class="form-control" id="name">
     </div>
 
@@ -184,28 +181,10 @@
         <legend class="form-label-bold">Interaction components</legend>
         <p class="form-hint">Interaction components that make up the transaction</p>
 
-        <label for="eligibility" class="block-label" data-target="select-govuk-smart-questions-panel">
+        <label for="eligibility" class="block-label">
           <input type="checkbox" name="interaction-component" value="eligibility" id="eligibility">
           Eligibility check
         </label>
-
-        <div class="panel panel-border-narrow js-hidden" id="select-govuk-smart-questions-panel">
-          <fieldset>
-            <legend class="form-label-bold">
-              Does the transaction use the GOV.UK Smart Questions component on Government as a Platform (GaaP)?
-            </legend>
-
-            <label for="govuk-smart-questions-used" class="block-label">
-              <input type="radio" name="govuk-smart-questions" value="yes" id="govuk-smart-questions-used">
-              Yes
-            </label>
-
-            <label for="govuk-smart-questions-not-used" class="block-label">
-              <input type="radio" name="govuk-smart-questions" value="no" id="govuk-smart-questions-not-used">
-              No
-            </label>
-          </fieldset>
-        </div>
 
         <label for="notification" class="block-label" data-target="select-govuk-notify-panel">
           <input type="checkbox" name="interaction-component" value="notification" id="notification">
@@ -276,9 +255,9 @@
           </fieldset>
         </div>
 
-        <label for="face-to-face-stage" class="block-label">
-          <input type="checkbox" name="interaction-component" value="face-to-face-stage" id="face-to-face-stage">
-          Face-to-face stage
+        <label for="in-person-appointment" class="block-label">
+          <input type="checkbox" name="interaction-component" value="in-person-appointment" id="in-person-appointment">
+          In-person appointment
         </label>
       </fieldset>
     </div>
@@ -319,16 +298,16 @@
       </select>
     </div>
 
-    <!-- Data curator -->
+    <!-- Contact for data -->
     <div class="form-group">
       <fieldset>
-        <legend class="form-label-bold">Data curator</legend>
-        <p class="form-hint">Name and email of person responsible for collecting cost and usage data</p>
-        <label class="form-label" for="data-curator-name">Name</label>
-        <input type="text" name="data-curator-name" class="form-control" id="data-curator-name">
+        <legend class="form-label-bold">Contact for data</legend>
+        <p class="form-hint">Name and email of person responsible for the data</p>
+        <label class="form-label" for="data-contact-name">Name</label>
+        <input type="text" name="data-contact-name" class="form-control" id="data-contact-name">
 
-        <label class="form-label" for="data-curator-email">Email</label>
-        <input type="text" name="data-curator-email" class="form-control" id="data-curator-email">
+        <label class="form-label" for="data-contact-email">Email</label>
+        <input type="text" name="data-contact-email" class="form-control" id="data-contact-email">
       </fieldset>
     </div>
 
