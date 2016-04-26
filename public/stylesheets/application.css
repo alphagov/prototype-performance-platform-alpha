@@ -2105,7 +2105,7 @@ input[type=number] {
   }
   dl {
     width: 75%;
-    float: right;
+    float: left;
   }
   dt, dd {
     float: left;
