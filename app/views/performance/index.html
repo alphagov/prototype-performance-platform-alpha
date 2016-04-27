@@ -257,6 +257,11 @@
       <p>The data is provided as a <a href="http://en.wikipedia.org/wiki/Comma-separated_values">CSV</a> file. A line in the file represents one transaction and is made up of data items, each of which is either a <em>characteristic</em>, <em>metric</em> or some other <em>supporting information</em> about the transaction.</p>
 
       <p>Characteristics are useful for sorting, filtering and aggregating data in the file, and for comparing metrics across transactions on a like-for-like basis.</p>
+
+      <p>Metrics indicate how many citizens used a transaction during a period of time, and the total operating cost (excluding fixed costs) of meeting this demand.</p>
+
+      <p>Supporting information is included about what a transaction does, where it can be found, and who is responsible for the data provided about it.</p>
+
       <p>Here is a list of the data items that will be provided for each transaction when you choose to download all data:
       </p>
     </div>
@@ -265,33 +270,33 @@
   <div class="group definition-group characteristics">
     <h3>Characteristics</h3>
     <dl>
-      <dt>Department</dt><dd>Morbi ac velit at orci consectetur dignissim sed et odio.</dd>
-      <dt>Agency/body</dt><dd>Donec in dapibus libero, et tempor neque.</dd>
-      <dt>Category</dt><dd>Nullam lacinia neque nec dolor consequat finibus.</dd>
-      <dt>Frequency of interaction</dt><dd>Duis quis placerat sapien.</dd>
-      <dt>Transactions dependent on</dt><dd>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</dd>
+      <dt>Department</dt><dd>The department responsible for the transaction.</dd>
+      <dt>Agency/body</dt><dd>The agency or body managing the transaction, if any.</dd>
+      <dt>Category</dt><dd>Transactions are categorised by type and by service.</dd>
+      <dt>Frequency of interaction</dt><dd>How often the transaction is accessed by a citizen.</dd>
+      <dt>Transactions dependent on</dt><dd>Other transactions which must be completed before the transaction can be completed.</dd>
       <dt>Interaction components</dt><dd>Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae.</dd>
-      <dt>GaaP components</dt><dd>Etiam vitae nisl posuere, efficitur nibh nec, mattis mi.</dd>
-      <dt>Manual activity</dt><dd>Nunc in erat ac metus auctor rhoncus.</dd>
+      <dt>GaaP components</dt><dd>Government as a Platform components used in the delivery of the transaction, if any.</dd>
+      <dt>Manual activity</dt><dd>Indicates whether the transaction requires manual activity in the back office.</dd>
     </dl>
   </div>
 
   <div class="group definition-group metrics">
     <h3>Metrics</h3>
     <dl>
-      <dt>Started transactions</dt><dd>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</dd>
-      <dt>Completed transactions</dt><dd>Nullam ac elit at leo egestas congue.</dd>
-      <dt>Total processing cost</dt><dd>Duis quis placerat sapien.</dd>
-      <dt>Cost % operational spend</dt><dd>Vivamus sit amet mi vel neque mollis feugiat.</dd>
+      <dt>Started transactions</dt><dd>How many times the transaction was started during a time period.</dd>
+      <dt>Completed transactions</dt><dd>How many times the transaction was completed successfully during a time period.</dd>
+      <dt>Total operating cost</dt><dd>Total operating cost of meeting the demand for the transaction during a time period (excluding fixed costs).</dd>
+      <dt>% department operating cost </dt><dd>Total operating cost of the transaction as a percentage of the total operating cost of its department during a time period (excluding fixed costs).</dd>
     </dl>
   </div>
 
   <div class="group definition-group information">
     <h3>Supporting information</h3>
     <dl>
-      <dt>User need</dt><dd>Sed pharetra, quam sit amet dignissim luctus, lacus enim rutrum libero, a viverra odio lorem sed erat.</dd>
-      <dt>URL</dt><dd>Duis quis placerat sapien.</dd>
-      <dt>Contact for data</dt><dd>Morbi ac velit at orci consectetur dignissim sed et odio.</dd>
+      <dt>User need</dt><dd>User need met by this transaction.</dd>
+      <dt>URL</dt><dd>URL of the transaction's start page or home page</dd>
+      <dt>Contact for data</dt><dd>Name and email of person responsible for the data.</dd>
     </dl>
   </div>
 
