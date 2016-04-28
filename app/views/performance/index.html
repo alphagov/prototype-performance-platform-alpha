@@ -184,6 +184,29 @@
         </fieldset>
 
         <br>
+        <!-- Metrics filter -->
+        <fieldset>
+          <legend>Select metrics to include:</legend>
+
+          <label class="block-label" for="fact-1">
+            <input id="fact-1" name="metrics" type="checkbox" value="started-transactions">
+            Number of times the transaction was started
+          </label>
+          <label class="block-label" for="fact-2">
+            <input id="fact-2" name="metrics" type="checkbox" value="completed-transactions">
+            Number of times the transaction was completed with a successful outcome
+          </label>
+          <label class="block-label" for="fact-3">
+            <input id="fact-3" name="metrics" type="checkbox" value="total-processing-cost">
+            Total operating cost of meeting the demand for the transaction
+          </label>
+          <label class="block-label" for="fact-4">
+            <input id="fact-4" name="metrics" type="checkbox" value="cost-pct-operational-spend">
+            Total operating cost of the transaction as a percentage of the total operating cost of its department
+          </label>
+        </fieldset>
+
+        <br>
         <!-- Characteristics filter -->
         <fieldset>
           <legend>Select characteristics to include:</legend>
@@ -214,29 +237,6 @@
           <label class="block-label" for="characteristic-7">
             <input id="characteristic-7" name="characteristics" type="checkbox" value="manual-activity">
             Manual activity
-          </label>
-        </fieldset>
-
-        <br>
-        <!-- Metrics filter -->
-        <fieldset>
-          <legend>Select metrics to include:</legend>
-
-          <label class="block-label" for="fact-1">
-            <input id="fact-1" name="metrics" type="checkbox" value="started-transactions">
-            Started transactions
-          </label>
-          <label class="block-label" for="fact-2">
-            <input id="fact-2" name="metrics" type="checkbox" value="completed-transactions">
-            Completed transactions
-          </label>
-          <label class="block-label" for="fact-3">
-            <input id="fact-3" name="metrics" type="checkbox" value="total-processing-cost">
-            Total operating cost
-          </label>
-          <label class="block-label" for="fact-4">
-            <input id="fact-4" name="metrics" type="checkbox" value="cost-pct-operational-spend">
-            % department operating cost
           </label>
         </fieldset>
 
